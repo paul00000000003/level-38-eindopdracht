@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,aAAa,CAAC;EACV,eAAe,EAAE,IAAI;CACxB",
+    "sources": [
+        "studentregel.scss"
+    ],
+    "names": [],
+    "file": "studentregel.css"
+}
