@@ -25,4 +25,12 @@
   font-size: 20px;
   background-color: aqua;
 }
+
+.regel {
+  list-style-type: none;
+}
+
+.linkregel {
+  color: black;
+}
 /*# sourceMappingURL=studentHistogram.css.map */
