@@ -279,6 +279,7 @@ class WeergavePerOpdracht extends React.Component {
             <ul className="ullijstje">{opdrachtenLinks}</ul>
           </nav>
           <div className="soortScore">
+            <p className="soortscore">Scorekeuze : </p>
             <p className="soortScoreLabel">Beiden</p>
             <input
               className="radio_score"

@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import MaakHistogram from "./MaakHistogram";
 import StudentPerLinkRegel from "./StudentPerLinkRegel";
-import "./studentHistogram.css";
+import "./weergaveperstudent.css";
 import MaakLineChart from "./MaakLineChart";
 
 let studenten = [];
@@ -290,6 +290,7 @@ class WeergavePerStudent extends React.Component {
           <ul className="ullijstje">{studentenLinkRegels}</ul>
         </nav>
         <div className="soortScore">
+          <p className="soortscore">Scorekeuze : </p>
           <p className="soortScoreLabel">Beiden</p>
           <input
             className="radio_score"
