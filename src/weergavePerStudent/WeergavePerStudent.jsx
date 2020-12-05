@@ -130,7 +130,6 @@ class WeergavePerStudent extends React.Component {
   }
 
   handleChange(index, vinkje) {
-    console.log("punt 1 " + this.state.gekozenStudenten);
     gekozenStudenten = this.state.gekozenStudenten;
     if (vinkje.checked === true) {
       if (gekozenStudenten.length === 6) {
@@ -153,7 +152,6 @@ class WeergavePerStudent extends React.Component {
       });
       if (index2 !== -1) gekozenStudenten.splice(index2, 1);
     }
-    console.log("aantal studenten : " + gekozenStudenten.length);
     outputselectie = Array.from(document.getElementsByClassName("outputoptie"));
     outputselectie.forEach((element) => (element.checked = false));
     if (gekozenStudenten.length === 0)
@@ -224,14 +222,13 @@ class WeergavePerStudent extends React.Component {
   make_histogram(e) {
     let item = document.getElementsByClassName("maakbold");
     if (typeof item[0] === "undefined") {
-      alert("Selecteer een opdracht door op de link te drukken");
+      alert("Selecteer een opdracht door op de link te klikken");
       e.target.checked = false;
     } else {
       if (this.state.scoreKeuze === "") {
         alert("Vul een scorekeuze in");
         e.target.checked = false;
       } else {
-        console.log("Hier verwacht ik hem");
         this.setState({ makeLineChart: false, makeHistogram: true });
       }
     }
@@ -281,9 +278,6 @@ class WeergavePerStudent extends React.Component {
       );
     });
 
-    this.state.gekozenStudenten.forEach((element) =>
-      console.log("gekozen student : " + element)
-    );
     return (
       <Router>
         <nav>
