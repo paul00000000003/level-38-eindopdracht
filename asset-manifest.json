@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/%20//paul00000000003.github.io/level-38-eindopdracht/%20/static/css/main.ba63f35e.chunk.css",
+    "main.js": "/%20//paul00000000003.github.io/level-38-eindopdracht/%20/static/js/main.e99f2418.chunk.js",
+    "main.js.map": "/%20//paul00000000003.github.io/level-38-eindopdracht/%20/static/js/main.e99f2418.chunk.js.map",
+    "runtime-main.js": "/%20//paul00000000003.github.io/level-38-eindopdracht/%20/static/js/runtime-main.05ac0a11.js",
+    "runtime-main.js.map": "/%20//paul00000000003.github.io/level-38-eindopdracht/%20/static/js/runtime-main.05ac0a11.js.map",
+    "static/js/2.58ec0f8a.chunk.js": "/%20//paul00000000003.github.io/level-38-eindopdracht/%20/static/js/2.58ec0f8a.chunk.js",
+    "static/js/2.58ec0f8a.chunk.js.map": "/%20//paul00000000003.github.io/level-38-eindopdracht/%20/static/js/2.58ec0f8a.chunk.js.map",
+    "index.html": "/%20//paul00000000003.github.io/level-38-eindopdracht/%20/index.html",
+    "static/css/main.ba63f35e.chunk.css.map": "/%20//paul00000000003.github.io/level-38-eindopdracht/%20/static/css/main.ba63f35e.chunk.css.map",
+    "static/js/2.58ec0f8a.chunk.js.LICENSE.txt": "/%20//paul00000000003.github.io/level-38-eindopdracht/%20/static/js/2.58ec0f8a.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.05ac0a11.js",
+    "static/js/2.58ec0f8a.chunk.js",
+    "static/css/main.ba63f35e.chunk.css",
+    "static/js/main.e99f2418.chunk.js"
+  ]
+}
