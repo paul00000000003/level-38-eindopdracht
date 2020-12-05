@@ -136,6 +136,14 @@ class WeergavePerStudent extends React.Component {
       if (gekozenStudenten.length === 6) {
         alert("Er kunnen slechts 6 studenten worden gekozen");
         vinkje.checked = false;
+      } else if (
+        this.state.scoreKeuze === "Beide" &&
+        gekozenStudenten.length === 1
+      ) {
+        vinkje.checked = false;
+        alert(
+          "Bij twee of meer studenten kun je voor de scorekeuze alleen moeilijk of leuk kiezen"
+        );
       } else gekozenStudenten.push(this.state.studenten[index]);
     } else {
       let index2 = -1;

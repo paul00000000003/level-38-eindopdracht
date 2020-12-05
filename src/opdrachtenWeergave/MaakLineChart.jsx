@@ -75,7 +75,7 @@ class MaakLineChart extends React.Component {
               datakey = "cijfer5Leuk";
               break;
             case 5:
-              color = "#65E2E"; //bruin
+              color = "#A65E2E"; //bruin
               datakey = "cijfer6Leuk";
               break;
             default:
@@ -87,7 +87,7 @@ class MaakLineChart extends React.Component {
             <Line
               name={name}
               type="monotone"
-              datakey={datakey}
+              dataKey={datakey}
               stroke={color}
             />
           );

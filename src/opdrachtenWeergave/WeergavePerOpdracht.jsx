@@ -131,7 +131,17 @@ class WeergavePerOpdracht extends React.Component {
       if (gekozenOpdrachten.length === 6) {
         alert("Er kunnen slechts 6 opdrachten worden gekozen");
         vinkje.checked = false;
-      } else gekozenOpdrachten.push(this.state.opdrachten[index]);
+      } else {
+        if (
+          this.state.scoreKeuze === "Beide" &&
+          gekozenOpdrachten.length === 1
+        ) {
+          vinkje.checked = false;
+          alert(
+            "Bij twee of meer opdrachten kun je voor de scorekeuze alleen moeilijk of leuk kiezen"
+          );
+        } else gekozenOpdrachten.push(this.state.opdrachten[index]);
+      }
     } else {
       let index2 = -1;
 
@@ -140,6 +150,7 @@ class WeergavePerOpdracht extends React.Component {
       });
       if (index2 !== -1) gekozenOpdrachten.splice(index2, 1);
     }
+
     outputselectie = Array.from(document.getElementsByClassName("outputoptie"));
     outputselectie.forEach((element) => (element.checked = false));
     if (gekozenOpdrachten.length === 0)
