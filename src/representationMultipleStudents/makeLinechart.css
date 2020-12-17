@@ -1,0 +1,26 @@
+/* No CSS */
+
+form {
+    display: flex;
+}
+
+.soortScoreLabel {
+    width: 80px;
+}
+
+.radio_score {
+    margin-right: 50px;
+}
+
+.soortScore {
+    width: 150px;
+    margin-left: 50px;
+}
+
+.linechart {
+    margin: auto;
+    margin-top: 50px;
+}
+
+
+/*# sourceMappingURL=maaklinechart.css.map */

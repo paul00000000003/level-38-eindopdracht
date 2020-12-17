@@ -1,9 +1,37 @@
-.scoremogelijkheden {
+#hoofdtitel {
+  width: 800px;
+  margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+}
+
+#titel_woord1 {
+  font-size: 30px;
+  width: 300px;
+  color: purple;
+}
+
+#titel_woord2 {
+  font-size: 30px;
+  width: 150px;
+  color: purple;
+}
+
+#titel_woord3 {
+  font-size: 30px;
+  width: 80px;
+  color: purple;
+}
+
+#titel_woord4 {
+  font-size: 30px;
+  width: 220px;
+  color: purple;
+}
+
+.titel_spatiering {
+  width: 50px;
 }
 
 .li-nav {
@@ -18,5 +46,13 @@
 .link:hover {
   font-weight: bold;
   color: orange;
+}
+
+.scoremogelijkheden {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 /*# sourceMappingURL=App.css.map */

@@ -1,0 +1,48 @@
+.studentregel {
+    list-style-type: none;
+}
+
+.soortScore {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.soortScore_leukenbeide {
+    width: 100px;
+}
+
+.soortScore_moeilijk {
+    width: 150px;
+}
+
+.radio_score {
+    margin-top: 20px;
+}
+
+.button {
+    margin: 40px;
+    font-size: 20px;
+    background-color: aqua;
+}
+
+.regel {
+    list-style-type: none;
+    width: 300px;
+}
+
+.linkregel {
+    color: black;
+}
+
+.regelMeerdereStudenten {
+    color: black;
+    width: 200px;
+}
+
+.ullijstje {
+    display: flex;
+}
+
+
+/*# sourceMappingURL=studentHistogram.css.map */

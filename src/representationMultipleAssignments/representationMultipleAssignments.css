@@ -1,0 +1,76 @@
+.opdrachtenDisplay {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[5];
+      grid-template-columns: repeat(5, 1fr);
+  -ms-grid-rows: (1fr)[5];
+      grid-template-rows: repeat(5, 1fr);
+}
+
+.vinkjes {
+  list-style-type: none;
+}
+
+.ullijstje {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[5];
+      grid-template-columns: repeat(5, 1fr);
+  -ms-grid-rows: (1fr)[5];
+      grid-template-rows: repeat(5, 1fr);
+}
+
+.maakbold {
+  font-weight: bold;
+}
+
+.linkklas {
+  color: black;
+}
+
+.soortscore {
+  width: 100px;
+}
+
+.regel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.assignmentPrint {
+  width: 175px;
+  height: 0.8em;
+}
+
+.assignmentInput {
+  height: 0.8em;
+}
+
+.multipleAssignmentLines {
+  width: 700px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: (1fr)[16];
+      grid-template-rows: repeat(16, 1fr);
+}
+
+.headingMultipleAssignments {
+  width: 100%;
+  text-align: center;
+}
+
+.heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.displayContainers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+/*# sourceMappingURL=representationMultipleAssignments.css.map */

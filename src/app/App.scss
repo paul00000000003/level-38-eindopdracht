@@ -1,6 +1,36 @@
-.scoremogelijkheden {
+$color: purple;
+#hoofdtitel {
+    width: 800px;
+    margin: auto;
     display: flex;
-    justify-content: space-around
+}
+
+#titel_woord1 {
+    font-size: 30px;
+    width: 300px;
+    color: $color;
+}
+
+#titel_woord2 {
+    font-size: 30px;
+    width: 150px;
+    color: $color;
+}
+
+#titel_woord3 {
+    font-size: 30px;
+    width: 80px;
+    color: $color;
+}
+
+#titel_woord4 {
+    font-size: 30px;
+    width: 220px;
+    color: $color;
+}
+
+.titel_spatiering {
+    width: 50px;
 }
 
 .li-nav {
@@ -16,4 +46,9 @@
 .link:hover {
     font-weight: bold;
     color: orange;
+}
+
+.scoremogelijkheden {
+    display: flex;
+    justify-content: space-around;
 }

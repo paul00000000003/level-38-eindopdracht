@@ -14,14 +14,19 @@ import {
 class MaakLineChart extends React.Component {
   render() {
     let color = "#8400D3";
-    let datakey = "cijfer1Leuk";
-    if (this.props.opdrachten.length === 1) {
+    let datakey = "grade1Nice";
+    console.log("binnen punt 1 " + this.props.assignments.length);
+    console.log("binnen data : " + this.props.dataLineChart.length);
+    this.props.dataLineChart.forEach((element) =>
+      console.log(
+        "graphdata " + element.grade1Difficult + " " + element.grade1Nice
+      )
+    );
+
+    let lines = [];
+    if (this.props.scoreChoice === "Beide") {
       return (
         <div>
-          <h1>
-            Cijfers voor moeilijk en leuk van opdracht{" "}
-            {this.props.opdrachten[0]}
-          </h1>
           <LineChart
             className="linechart"
             width={730}
@@ -29,7 +34,7 @@ class MaakLineChart extends React.Component {
             data={this.props.dataLineChart}
             margin={{ top: 5 }}
           >
-            <XAxis dataKey="student" />
+            <XAxis dataKey="opdracht" />
             <YAxis />
             <CartesianGrid strokeDasharray="3 3" />
             <Tooltip />
@@ -37,50 +42,49 @@ class MaakLineChart extends React.Component {
             <Line
               name="cijfer moeilijk"
               type="monotone"
-              dataKey="cijfer1Moeilijk"
+              dataKey="grade1Difficult"
               stroke="#8884d8"
             />
             <Line
               name="cijfer leuk"
               type="monotone"
-              dataKey="cijfer1Leuk"
+              dataKey="grade1Nice"
               stroke="#FF0000"
             />
           </LineChart>
         </div>
       );
     } else {
-      let lijnen = [];
-      if (this.props.scorekeuze === "Leuk") {
-        lijnen = this.props.opdrachten.map((element, index) => {
+      if (this.props.scoreChoice === "Leuk") {
+        lines = this.props.assignments.map((element, index) => {
           switch (index) {
             case 0:
               color = "#FF0000"; //rood
-              datakey = "cijfer1Leuk";
+              datakey = "grade1Nice";
               break;
             case 1:
               color = "#7FFFD4"; //aquamarijn
-              datakey = "cijfer2Leuk";
+              datakey = "grade2Nice";
               break;
             case 2:
               color = "#008000"; //groen
-              datakey = "cijfer3Leuk";
+              datakey = "grade3Nice";
               break;
             case 3:
               color = "#8400D3"; //paars
-              datakey = "cijfer4Leuk";
+              datakey = "grade4Nice";
               break;
             case 4:
               color = "#FFA500"; //oranje
-              datakey = "cijfer5Leuk";
+              datakey = "grade5Nice";
               break;
             case 5:
               color = "#A65E2E"; //bruin
-              datakey = "cijfer6Leuk";
+              datakey = "grade6Nice";
               break;
             default:
               color = "#FF0000"; //roond
-              datakey = "cijfer1Leuk";
+              datakey = "grade1Nice";
           }
           let name = "cijfer leuk opdracht " + element;
           return (
@@ -93,35 +97,35 @@ class MaakLineChart extends React.Component {
           );
         });
       } else {
-        lijnen = this.props.opdrachten.map((element, index) => {
+        lines = this.props.assignments.map((element, index) => {
           switch (index) {
             case 0:
               color = "#FF0000"; //rood
-              datakey = "cijfer1Moeilijk";
+              datakey = "grade1Difficult";
               break;
             case 1:
               color = "#7FFFD4"; //aquamarijn
-              datakey = "cijfer2Moeilijk";
+              datakey = "grade2Difficult";
               break;
             case 2:
               color = "#008000"; //groen
-              datakey = "cijfer3Moeilijk";
+              datakey = "grade3Difficult";
               break;
             case 3:
               color = "#8400D3"; //aquamarijn
-              datakey = "cijfer4Moeilijk";
+              datakey = "grade4Difficult";
               break;
             case 4:
               color = "#FFA500"; //groen
-              datakey = "cijfer5Moeilijk";
+              datakey = "grade5Difficult";
               break;
             case 5:
               color = "#A65E2E"; //bruin
-              datakey = "cijfer6Moeilijk";
+              datakey = "grade6Difficult";
               break;
             default:
               color = "#8400D3"; //paars
-              datakey = "cijfer1Moeilijk";
+              datakey = "grade1Difficult";
           }
           let name = "cijfer moeilijk opdracht " + element;
           return (
@@ -134,11 +138,12 @@ class MaakLineChart extends React.Component {
           );
         });
       }
+
       return (
         <LineChart
           className="linechart"
-          width={1460}
-          height={500}
+          width={730}
+          height={250}
           data={this.props.dataLineChart}
           margin={{ top: 5 }}
         >
@@ -147,7 +152,7 @@ class MaakLineChart extends React.Component {
           <CartesianGrid strokeDasharray="3 3" />
           <Tooltip />
           <Legend />
-          {lijnen}
+          {lines}
         </LineChart>
       );
     }

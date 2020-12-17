@@ -3,6 +3,8 @@
 }
 
 .soortScore {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
@@ -31,3 +33,13 @@
 .linkregel {
     color: black;
 }
+
+.titel {
+    width: 800px;
+    margin: auto;
+    font-weight: normal;
+    transform: translate(50px);
+}
+
+
+/*# sourceMappingURL=weergavemeerderestudenten.css.map */
