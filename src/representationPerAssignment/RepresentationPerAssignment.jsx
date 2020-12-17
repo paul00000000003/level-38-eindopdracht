@@ -232,7 +232,7 @@ class RepresentationPerAssignment extends React.Component {
                 />
               </div>
             </div>
-            {this.state.makeGraph && (
+            {this.state.makeGraph ? (
               <div>
                 <Switch>{assignmentRoutes}</Switch>
                 <div>
@@ -242,6 +242,15 @@ class RepresentationPerAssignment extends React.Component {
                     scoreChoice={this.state.scoreChoice}
                   />
                 </div>
+              </div>
+            ) : (
+              <div>
+                <img
+                  className="verschuifBoek_enkel"
+                  src="https://www.mupload.nl/img/3gtpo26ut9aj.jpg"
+                  alt="boek"
+                  width="600px"
+                />
               </div>
             )}
           </div>

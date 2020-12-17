@@ -185,12 +185,27 @@ class RepresentationMultipleStudents extends React.Component {
         <nav>
           <ul className="ullijstje">{studentenLinkRegels}</ul>
         </nav>
-        {this.state.chosenStudents.length > 0 && (
+        {this.state.chosenStudents.length > 0 ? (
           <MakeLineChart
             dataLineChart={this.state.dataLineChart}
             students={this.state.chosenStudents}
             scorechoice={this.state.scoreChoice}
           />
+        ) : (
+          <div>
+            <img
+              className="verschuifPlaatje_multiple"
+              src="https://www.mupload.nl/img/0npaaxw.gif"
+              alt="studenten"
+              width="300px"
+            />
+            <img
+              className="verschuifPlaatje_multiple"
+              src="https://www.mupload.nl/img/0npaaxw.gif"
+              alt="studenten"
+              width="300px"
+            />
+          </div>
         )}
       </div>
     );

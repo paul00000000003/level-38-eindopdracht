@@ -234,12 +234,27 @@ class RepresentationMultipleAssignments extends React.Component {
         </div>
         <div className="displayContainers">
           <div className="multipleAssignmentLines">{assignmentLinks}</div>
-          {this.state.makeLineChart && (
+          {this.state.makeLineChart ? (
             <div>
               <MaakLineChart
                 dataLineChart={this.state.dataLineChart}
                 assignments={this.state.chosenAssignments}
                 scorechoice={this.state.scoreChoice}
+              />
+            </div>
+          ) : (
+            <div>
+              <img
+                className="shift_multipleBooks"
+                src="https://www.mupload.nl/img/3gtpo26ut9aj.jpg"
+                alt="boek"
+                width="300px"
+              />
+              <img
+                className="shift_multipleBooks2"
+                src="https://www.mupload.nl/img/3gtpo26ut9aj.jpg"
+                alt="boek"
+                width="300px"
               />
             </div>
           )}

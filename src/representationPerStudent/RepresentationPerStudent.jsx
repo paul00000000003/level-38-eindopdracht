@@ -242,7 +242,7 @@ class RepresentationPerStudent extends React.Component {
             </div>
           </div>
           <hr />
-          {this.state.makegraph && (
+          {this.state.makegraph ? (
             <div id="graphcontainer">
               <Switch className="switch">{studentsRoutes}</Switch>
               <div>
@@ -252,6 +252,15 @@ class RepresentationPerStudent extends React.Component {
                   scorekeuze={this.state.scoreKeuze}
                 />
               </div>
+            </div>
+          ) : (
+            <div>
+              <img
+                className="verschuifPlaatje_enkel"
+                src="https://www.mupload.nl/img/0npaaxw.gif"
+                alt="student"
+                width="300px"
+              />
             </div>
           )}
         </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import "./makeLinechart.css";
+import Recharts from "recharts";
 
 import {
   LineChart,
@@ -23,7 +24,7 @@ class MakeLineChart extends React.Component {
   render() {
     let color = "#8400D3";
     let datakey = "cijfer1Leuk";
-
+    let name_label;
     let lines = [];
     if (this.state.scorechoice === "Leuk") {
       lines = this.props.students.map((element, index) => {
@@ -56,9 +57,15 @@ class MakeLineChart extends React.Component {
             color = "#FF0000"; //paars
             datakey = "grad1Nice";
         }
-        let name = "cijfer leuk student " + element;
+        name_label = "cijfer leuk student " + element;
         return (
-          <Line name={name} type="monotone" dataKey={datakey} stroke={color} />
+          <Line
+            name={name_label}
+            type="monotone"
+            dataKey={datakey}
+            stroke={color}
+            key={index}
+          />
         );
       });
     } else {
@@ -92,9 +99,16 @@ class MakeLineChart extends React.Component {
             color = "#FF0000"; //paars
             datakey = "grade1Difficult";
         }
-        let name = "cijfer moeilijk student " + element;
+        name_label = "cijfer moeilijk student " + element;
+        console.log(name_label);
         return (
-          <Line name={name} type="monotone" dataKey={datakey} stroke={color} />
+          <Line
+            name={name_label}
+            type="monotone"
+            dataKey={datakey}
+            stroke={color}
+            key={index + 6}
+          />
         );
       });
     }

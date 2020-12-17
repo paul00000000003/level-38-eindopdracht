@@ -38,4 +38,9 @@
   -ms-grid-rows: (1fr)[32];
       grid-template-rows: repeat(32, 1fr);
 }
+
+.verschuifBoek_enkel {
+  -webkit-transform: translate(150px, 150px);
+          transform: translate(150px, 150px);
+}
 /*# sourceMappingURL=representationPerAssignment.css.map */

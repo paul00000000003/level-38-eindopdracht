@@ -41,5 +41,10 @@
     transform: translate(50px);
 }
 
+.verschuifPlaatje_multiple {
+    transform: translateY(700px);
+    transform: translateX(600px);
+}
+
 
 /*# sourceMappingURL=weergavemeerderestudenten.css.map */

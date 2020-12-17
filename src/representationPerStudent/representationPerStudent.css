@@ -76,4 +76,9 @@ li {
 #bovenruimte {
   height: 100px;
 }
+
+.verschuifPlaatje_enkel {
+  -webkit-transform: translate(600px, 100px);
+          transform: translate(600px, 100px);
+}
 /*# sourceMappingURL=representationPerStudent.css.map */

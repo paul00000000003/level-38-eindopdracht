@@ -30,3 +30,7 @@
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(32, 1fr);
 }
+
+.verschuifBoek_enkel {
+    transform: translate(150px, 150px);
+}
