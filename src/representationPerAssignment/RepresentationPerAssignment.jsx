@@ -197,7 +197,7 @@ class RepresentationPerAssignment extends React.Component {
       <div>
         <Router>
           <div id="hoofdcontainer">
-            <ul className="ullijstje">{assignmentLinks}</ul>
+            <ul className="ul_per_assignment">{assignmentLinks}</ul>
             <div>
               <p className="soortscore">Scorekeuze : </p>
               <div className="soortScore">
