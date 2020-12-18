@@ -192,7 +192,7 @@ class RepresentationMultipleAssignments extends React.Component {
           <h1 className="headingMultipleAssignments">
             Kies een of meerdere opdrachten
           </h1>
-          <div id="soortScorePlek">
+          <div id="sortScoreSpot">
             <p className="sortScoreLabel">Moeilijk</p>
             <input
               className="radio_score"
