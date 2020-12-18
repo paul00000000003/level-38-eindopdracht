@@ -217,13 +217,15 @@ class RepresentationPerStudent extends React.Component {
           <hr />
           {this.state.makegraph ? (
             <div id="graphcontainer">
-              <Switch className="switch">{studentsRoutes}</Switch>
-              <div>
-                <MakeLineChart
-                  dataLineChart={this.state.dataLineChart}
-                  students={this.state.gekozenStudents}
-                  scorekeuze={this.state.scoreKeuze}
-                />
+              <div className="posgrafiek">
+                <Switch>{studentsRoutes}</Switch>
+                <div>
+                  <MakeLineChart
+                    dataLineChart={this.state.dataLineChart}
+                    students={this.state.gekozenStudents}
+                    scorekeuze={this.state.scoreKeuze}
+                  />
+                </div>
               </div>
             </div>
           ) : (

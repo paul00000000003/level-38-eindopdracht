@@ -36,6 +36,7 @@
 
 #graphcontainer {
     display: flex;
+    flex-direction: column;
 }
 
 .soortscore {
@@ -75,4 +76,13 @@ li {
 
 .verschuifPlaatje_enkel {
     transform: translate(600px, 100px);
+}
+
+.posgrafiek {
+    width: 720px;
+    transform: translateX(400px);
+}
+
+.centreerNaamEnkelHistogram {
+    text-align: center;
 }
