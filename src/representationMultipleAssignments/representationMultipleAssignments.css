@@ -41,9 +41,7 @@
 
 .multipleAssignmentLines {
     width: 700px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(16, 1fr);
+    height: 60px;
 }
 
 .headingMultipleAssignments {
@@ -65,4 +63,25 @@
 
 .shift_multipleBooks2 {
     transform: translate(350px, 200px);
+}
+
+.multipleAssignmentsSelect {
+    transform: translate(10px, 35px);
+}
+
+.selectButtonToevoegen {
+    transform: translate(20px, 35px)
+}
+
+.selectButtonVerwijderen {
+    transform: translate(30px, 35px)
+}
+
+#remark {
+    width: 400px;
+    transform: translateY(60px);
+}
+
+.assignmentLabel {
+    transform: translateY(20px);
 }

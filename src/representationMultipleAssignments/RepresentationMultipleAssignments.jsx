@@ -5,9 +5,10 @@ import MakeLineChart from "./MakeLineChart";
 
 let assignments = [];
 let students = [];
-
+let assignment = "";
 let outputselection = [];
 let data = [];
+let chosenAssignments = [];
 
 const sortStudents = (students) =>
   students.sort(function (a, b) {
@@ -22,9 +23,8 @@ const sortStudents = (students) =>
     return 0;
   });
 
-
 const make_lineChart_data = (assign, scores) => {
-  let chosenAssignments = assign;
+  chosenAssignments = assign;
   let dataLineChart = [];
   sortStudents(students);
   students.forEach((element) => {
@@ -89,6 +89,7 @@ class RepresentationMultipleAssignments extends React.Component {
     super();
     this.state = {
       chosenAssignments: [],
+      selectedAssignment: " ",
       students: [],
       dataLineChart: [],
       assignments: [],
@@ -98,61 +99,66 @@ class RepresentationMultipleAssignments extends React.Component {
       makeHistogram: false,
     };
 
-    this.handleChange = this.handleChange.bind(this);
     this.scoreChoiceHandle = this.scoreChoiceHandle.bind(this);
+    this.selectAssignment = this.selectAssignment.bind(this);
+    this.selectMultipleAdd = this.selectMultipleAdd.bind(this);
+    this.selectMultipleRemove = this.selectMultipleRemove.bind(this);
   }
 
-  handleChange(index, vinkje) {
-    let chosenAssignments = this.state.chosenAssignments;
-    console.log("binnen handlechange");
-    if (vinkje.checked === true) {
-      if (chosenAssignments.length === 6) {
-        alert("Er kunnen slechts 6 opdrachten worden gekozen");
-        vinkje.checked = false;
-      } else {
-        if (
-          this.state.scoreChoice === "Beide" &&
-          chosenAssignments.length === 1
-        ) {
-          vinkje.checked = false;
-          alert(
-            "Bij twee of meer opdrachten kun je voor de scorekeuze alleen moeilijk of leuk kiezen"
-          );
-        } else {
-          chosenAssignments.push(this.state.assignments[index]);
+  selectAssignment = (e) => {
+    this.setState({ selectedAssignment: e.target.value });
+  };
+
+  selectMultipleAdd = (e) => {
+    e.preventDefault();
+    assignment = this.state.selectedAssignment;
+    chosenAssignments = this.state.chosenAssignments;
+    if (assignment !== "") {
+      if (chosenAssignments.indexOf(assignment) !== -1)
+        document.getElementById("remark").textContent =
+          "deze opdracht was al geselecteerd";
+      else {
+        document.getElementById("remark").textContent = "";
+        chosenAssignments.push(assignment);
+        data = make_lineChart_data(chosenAssignments, this.props.scores);
+        this.setState({
+          makeLineChart: true,
+          dataLineChart: data,
+          chosenAssignments,
+        });
+      }
+    }
+  };
+
+  selectMultipleRemove = (e) => {
+    e.preventDefault();
+    assignment = this.state.selectedAssignment;
+    chosenAssignments = this.state.chosenAssignments;
+    if (assignment !== "") {
+      if (chosenAssignments.indexOf(assignment) === -1)
+        document.getElementById("remark").textContent =
+          "deze opdracht was niet geselecteerd";
+      else {
+        document.getElementById("remark").textContent = "";
+        let index2 = chosenAssignments.indexOf(assignment);
+        if (index2 !== -1) chosenAssignments.splice(index2, 1);
+        if (chosenAssignments.length === 0)
+          this.setState({
+            makeLineChart: false,
+            dataLineChart: [],
+            chosenAssignments: [],
+          });
+        else {
+          data = make_lineChart_data(chosenAssignments, this.props.scores);
+          this.setState({
+            makeLineChart: true,
+            dataLineChart: data,
+            chosenAssignments,
+          });
         }
       }
-    } else {
-      let index2 = -1;
-
-      chosenAssignments.forEach((element, index3) => {
-        if (element === this.state.assignments[index]) index2 = index3;
-      });
-      if (index2 !== -1) chosenAssignments.splice(index2, 1);
     }
-
-    outputselection = Array.from(
-      document.getElementsByClassName("outputoptie")
-    );
-    outputselection.forEach((element) => (element.checked = false));
-    if (chosenAssignments.length === 0)
-      this.setState({
-        chosenAssignments,
-        makeLineChart: false,
-        dataLineChart: [],
-      });
-    else {
-      data = make_lineChart_data(chosenAssignments, this.props.scores);
-      data.forEach((element) =>
-        console.log(element.grade1Difficult + "  " + element.grade1Nice)
-      );
-      this.setState({
-        makeLineChart: true,
-        dataLineChart: data,
-        chosenAssignments,
-      });
-    }
-  }
+  };
 
   scoreChoiceHandle(e) {
     this.setState({ scoreChoice: e.target.value });
@@ -205,7 +211,32 @@ class RepresentationMultipleAssignments extends React.Component {
           </h1>
         </div>
         <div className="displayContainers">
-          <div className="multipleAssignmentLines">{assignmentLinks}</div>
+          <h1 className="assignmentLabel">Opdrachten : </h1>
+          <div id="selectContainer">
+            <form className="multipleAssignmentLines">
+              <select
+                className="multipleAssignmentsSelect"
+                onChange={this.selectAssignment}
+                value={this.state.selectedAssignment}
+              >
+                <option value=""></option>
+                {assignmentLinks}
+              </select>
+              <button
+                className="selectButtonToevoegen"
+                onClick={this.selectMultipleAdd}
+              >
+                Toevoegen
+              </button>
+              <button
+                className="selectButtonVerwijderen"
+                onClick={this.selectMultipleRemove}
+              >
+                Verwijderen
+              </button>
+            </form>
+            <p id="remark"></p>
+          </div>
           {this.state.makeLineChart ? (
             <div>
               <MakeLineChart

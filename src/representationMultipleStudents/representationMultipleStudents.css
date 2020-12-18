@@ -46,5 +46,10 @@
     transform: translateX(600px);
 }
 
+#remark {
+    height: 1em;
+    width: 150px;
+}
+
 
 /*# sourceMappingURL=weergavemeerderestudenten.css.map */
