@@ -1,6 +1,5 @@
 import React from "react";
 import "./makeLinechart.css";
-import Recharts from "recharts";
 
 import {
   LineChart,

@@ -10,7 +10,7 @@ import {
   Tooltip,
 } from "recharts";
 
-class MaakLineChart extends React.Component {
+class MakeLineChart extends React.Component {
   render() {
     let color = "#8400D3";
     let datakey = "cijfer1Leuk";
@@ -150,4 +150,4 @@ class MaakLineChart extends React.Component {
   }
 }
 
-export default MaakLineChart;
+export default MakeLineChart;

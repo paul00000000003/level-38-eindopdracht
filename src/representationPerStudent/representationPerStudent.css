@@ -1,84 +1,78 @@
 .studentregel {
-  list-style-type: none;
+    list-style-type: none;
 }
 
 .soortScore_leukenbeide {
-  width: 100px;
+    width: 100px;
 }
 
 .soortScore_moeilijk {
-  width: 150px;
+    width: 150px;
 }
 
 .radioScore {
-  margin-top: 20px;
-  margin-left: 15px;
+    margin-top: 20px;
+    margin-left: 15px;
 }
 
 .button {
-  margin: 40px;
-  font-size: 20px;
-  background-color: aqua;
+    margin: 40px;
+    font-size: 20px;
+    background-color: aqua;
 }
 
 .regel {
-  list-style-type: none;
+    list-style-type: none;
 }
 
 .linkregel {
-  color: white;
+    color: white;
 }
 
 #maincontainer {
-  width: 200px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+    width: 200px;
+    display: flex
 }
 
 #graphcontainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+    display: flex;
 }
 
 .soortscore {
-  margin-left: 50px;
+    margin-left: 50px;
 }
 
 .switch {
-  border: 3px solid black;
+    border: 3px solid black
 }
 
 #nav {
-  background-color: purple;
-  color: white;
+    background-color: purple;
+    color: white;
 }
 
 li {
-  list-style-type: none;
-  color: white;
+    list-style-type: none;
+    color: white;
 }
 
 .soortScore {
-  height: 1.2em;
+    height: 1.2em;
 }
 
 .soortScoreLabel {
-  width: 180px;
+    width: 180px;
 }
 
 #aside {
-  width: 205px;
-  border: solid 10px white;
+    width: 205px;
+    border: solid 10px white;
 }
 
 #bovenruimte {
-  height: 100px;
+    height: 100px;
 }
 
 .verschuifPlaatje_enkel {
-  -webkit-transform: translate(600px, 100px);
-          transform: translate(600px, 100px);
+    transform: translate(600px, 100px);
 }
-/*# sourceMappingURL=representationPerStudent.css.map */

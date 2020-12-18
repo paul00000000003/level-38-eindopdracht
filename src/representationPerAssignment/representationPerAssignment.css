@@ -1,46 +1,36 @@
 .opdrachtenDisplay {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[5];
-      grid-template-columns: repeat(5, 1fr);
-  -ms-grid-rows: (1fr)[5];
-      grid-template-rows: repeat(5, 1fr);
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
 }
 
 .vinkjes {
-  list-style-type: none;
+    list-style-type: none;
 }
 
 .maakbold {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 .linkklas {
-  color: black;
+    color: black;
 }
 
 .soortscore {
-  width: 100px;
+    width: 100px;
 }
 
 #hoofdcontainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+    display: flex
 }
 
 .ul_per_assignment {
-  width: 600px;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
-  -ms-grid-rows: (1fr)[32];
-      grid-template-rows: repeat(32, 1fr);
+    width: 600px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(32, 1fr);
 }
 
 .verschuifBoek_enkel {
-  -webkit-transform: translate(150px, 150px);
-          transform: translate(150px, 150px);
+    transform: translate(150px, 150px);
 }
-/*# sourceMappingURL=representationPerAssignment.css.map */

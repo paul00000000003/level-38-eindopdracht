@@ -1,5 +1,4 @@
 import React from "react";
-import "./maaklinechart.css";
 
 import {
   LineChart,
@@ -11,7 +10,7 @@ import {
   Tooltip,
 } from "recharts";
 
-class MaakLineChart extends React.Component {
+class MakeLineChart extends React.Component {
   render() {
     let color = "#8400D3";
     let datakey = "grade1Nice";
@@ -159,4 +158,4 @@ class MaakLineChart extends React.Component {
   }
 }
 
-export default MaakLineChart;
+export default MakeLineChart;

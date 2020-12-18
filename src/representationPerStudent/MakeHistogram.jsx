@@ -1,5 +1,5 @@
 import React from "react";
-import { BarChart, Bar, XAxis, YAxis, Tooltip } from "recharts";
+import {BarChart, Bar, XAxis, YAxis, Tooltip} from "recharts";
 
 class MaakHistogram extends React.Component {
   constructor() {

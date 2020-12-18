@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import AssignmentPerLinkLine from "./AssignmentPerLinkLine";
 import "./representationPerAssignment.css";
 import MakeHistogram from "./MakeHistogram";
-import MaakLineChart from "./MaakLineChart";
+import MakeLineChart from "./MakeLineChart";
 
 let assignments = [];
 let students = [];
@@ -25,82 +25,54 @@ const sortStudents = (students) =>
   });
 
 const make_lineChart_data = (assign, scores) => {
-  chosenAssignments = assign;
-  let difficultGradesAssign1 = [];
-  let difficultGradesAssign2 = [];
-  let difficultGradesAssign3 = [];
-  let difficultGradesAssign4 = [];
-  let difficultGradesAssign5 = [];
-  let difficultGradesAssign6 = [];
-  let niceGradesAssign1 = [];
-  let niceGradesAssign2 = [];
-  let niceGradesAssign3 = [];
-  let niceGradesAssign4 = [];
-  let niceGradesAssign5 = [];
-  let niceGradesAssign6 = [];
-  console.log("begin : " + chosenAssignments.length + " " + students.length);
+  let chosenAssignments = assign;
+  let dataLineChart = [];
+  sortStudents(students);
+  students.forEach((element) => {
+    const item = { student: element };
+    dataLineChart.push(item);
+  });
+
   scores.forEach((element) => {
     let spotAssign = chosenAssignments.indexOf(element.assignment);
     if (spotAssign > -1 && spotAssign < 6) {
-      console.log("gevondenspotAssign " + spotAssign);
       let spotstudent = students.indexOf(element.student);
       switch (spotAssign) {
         case 0:
-          difficultGradesAssign1[spotstudent] = element.difficultGrade;
-          niceGradesAssign1[spotstudent] = element.niceGrade;
+          dataLineChart[spotstudent]["grade1Difficult"] =
+            element.difficultGrade;
+          dataLineChart[spotstudent]["grade1Nice"] = element.niceGrade;
           break;
         case 1:
-          difficultGradesAssign2[spotstudent] = element.difficultGrade;
-          niceGradesAssign2[spotstudent] = element.difficultGrade;
+          dataLineChart[spotstudent]["grade2Difficult"] =
+            element.difficultGrade;
+          dataLineChart[spotstudent]["grade2Nice"] = element.niceGrade;
           break;
         case 2:
-          difficultGradesAssign3[spotstudent] = element.difficultGrade;
-          niceGradesAssign3[spotstudent] = element.niceGrade;
+          dataLineChart[spotstudent]["grade3Difficult"] =
+            element.difficultGrade;
+          dataLineChart[spotstudent]["grade3Nice"] = element.niceGrade;
           break;
         case 3:
-          difficultGradesAssign4[spotstudent] = element.difficultGrade;
-          niceGradesAssign4[spotstudent] = element.niceGrade;
+          dataLineChart[spotstudent]["grade4Difficult"] =
+            element.difficultGrade;
+          dataLineChart[spotstudent]["grade4Nice"] = element.niceGrade;
           break;
         case 4:
-          difficultGradesAssign5[spotstudent] = element.difficultGrade;
-          niceGradesAssign5[spotstudent] = element.niceGrade;
+          dataLineChart[spotstudent]["grade5Difficult"] =
+            element.difficultGrade;
+          dataLineChart[spotstudent]["grade5Nice"] = element.niceGrade;
           break;
         case 5:
-          difficultGradesAssign6[spotstudent] = element.difficultGrade;
-          niceGradesAssign6[spotstudent] = element.niceGrade;
+          dataLineChart[spotstudent]["grade6Difficult"] =
+            element.difficultGrade;
+          dataLineChart[spotstudent]["grade6Nice"] = element.niceGrade;
           break;
         default:
-          console.log("Geen waarde mogelijk voor " + spotAssign);
+          console.log("onverwacht");
       }
     }
   });
-
-  let dataLineChart = [];
-  sortStudents(students);
-  students.forEach((element, index) => {
-    console.log(
-      "vullen punt 1: " +
-        difficultGradesAssign1[index] +
-        " " +
-        niceGradesAssign1[index]
-    );
-    dataLineChart.push({
-      student: element,
-      grade1Difficult: difficultGradesAssign1[index],
-      grade2Difficult: difficultGradesAssign2[index],
-      grade3Difficult: difficultGradesAssign3[index],
-      grade4Difficult: difficultGradesAssign4[index],
-      grade5Difficult: difficultGradesAssign5[index],
-      grade6Difficult: difficultGradesAssign6[index],
-      grade1Nice: niceGradesAssign1[index],
-      grade2Nice: niceGradesAssign2[index],
-      grade3Nice: niceGradesAssign3[index],
-      grade4Nice: niceGradesAssign4[index],
-      grade5Nice: niceGradesAssign5[index],
-      grade6Nice: niceGradesAssign6[index],
-    });
-  });
-
   return dataLineChart;
 };
 
@@ -236,7 +208,7 @@ class RepresentationPerAssignment extends React.Component {
               <div>
                 <Switch>{assignmentRoutes}</Switch>
                 <div>
-                  <MaakLineChart
+                  <MakeLineChart
                     dataLineChart={this.state.dataLineChart}
                     assignments={this.state.chosenAssignments}
                     scoreChoice={this.state.scoreChoice}
