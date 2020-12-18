@@ -189,26 +189,28 @@ class RepresentationMultipleAssignments extends React.Component {
     return (
       <div>
         <div className="heading">
-          <p className="sortScoreLabel">Moeilijk</p>
-          <input
-            className="radio_score"
-            type="radio"
-            name="scorechoice"
-            value="Moeilijk"
-            onChange={this.scoreChoiceHandle}
-          />
-          <p className="sortScoreLabel">Leuk</p>
-          <input
-            className="radio_score"
-            type="radio"
-            name="scorechoice"
-            value="Leuk"
-            onChange={this.scoreChoiceHandle}
-            defaultChecked
-          />
           <h1 className="headingMultipleAssignments">
             Kies een of meerdere opdrachten
           </h1>
+          <div id="soortScorePlek">
+            <p className="sortScoreLabel">Moeilijk</p>
+            <input
+              className="radio_score"
+              type="radio"
+              name="scorechoice"
+              value="Moeilijk"
+              onChange={this.scoreChoiceHandle}
+            />
+            <p className="sortScoreLabel">Leuk</p>
+            <input
+              className="radio_score"
+              type="radio"
+              name="scorechoice"
+              value="Leuk"
+              onChange={this.scoreChoiceHandle}
+              defaultChecked
+            />
+          </div>
         </div>
         <div className="displayContainers">
           <h1 className="assignmentLabel">Opdrachten : </h1>
@@ -238,7 +240,7 @@ class RepresentationMultipleAssignments extends React.Component {
             <p id="remark"></p>
           </div>
           {this.state.makeLineChart ? (
-            <div>
+            <div className="positionChart">
               <MakeLineChart
                 dataLineChart={this.state.dataLineChart}
                 assignments={this.state.chosenAssignments}
