@@ -1,0 +1,19 @@
+.linechart {
+    margin: auto;
+    margin-top: 50px;
+}
+
+.sortScoreSelectionMultipleStudents {
+    display: flex;
+}
+
+.sortScoreLabel {
+    width: 150px;
+}
+
+.radio {
+    transform: translateY(20px)
+}
+
+
+/*# sourceMappingURL=maaklinechart.css.map */

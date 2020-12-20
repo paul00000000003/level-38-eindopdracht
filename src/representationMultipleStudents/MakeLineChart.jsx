@@ -1,5 +1,5 @@
 import React from "react";
-import "./makeLinechart.css";
+import "./makeLineChartMultipleStudents.css";
 
 import {
   LineChart,
@@ -113,19 +113,18 @@ class MakeLineChart extends React.Component {
     }
     return (
       <div>
-        <form>
-          <p className="sortScore">Soort Score</p>
-          <p className="sortScoreLabel">Moeilijk</p>
+        <form className="sortScoreSelectionMultipleStudents">
+          <p>Soort Score Moeilijk</p>
           <input
-            className="radio_score"
+            className="radio"
             type="radio"
             name="scoreChoice"
             value="Moeilijk"
             onChange={this.scoreKeuzeHandle}
           />
-          <p className="soortScoreLabel">Leuk</p>
+          <p>Leuk</p>
           <input
-            className="radio_score"
+            className="radio"
             type="radio"
             name="scoreChoice"
             value="Leuk"
@@ -141,7 +140,7 @@ class MakeLineChart extends React.Component {
           data={this.props.dataLineChart}
           margin={{ top: 5 }}
         >
-          <XAxis dataKey="student" />
+          <XAxis dataKey="assignment" />
           <YAxis />
           <CartesianGrid strokeDasharray="3 3" />
           <Tooltip />

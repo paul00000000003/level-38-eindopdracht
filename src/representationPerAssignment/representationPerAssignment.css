@@ -1,36 +1,30 @@
-.opdrachtenDisplay {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+.singleContainerPerAssignment {
+    display: flex;
 }
 
-.vinkjes {
-    list-style-type: none;
+.formContainer {
+    width: 700px;
 }
 
-.maakbold {
-    font-weight: bold;
+.selectSingle {
+    width: 400px;
+    font-size: 20px;
+    transform: translate(150px, 350px);
 }
 
-.linkklas {
-    color: black;
+.headerAssignments {
+    transform: translate(150px, 350px);
 }
 
-.soortscore {
-    width: 100px;
-}
-
-#hoofdcontainer {
-    display: flex
-}
-
-.ul_per_assignment {
-    width: 600px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(32, 1fr);
+.sortScore {
+    transform: translateX(200px);
+    display: flex;
 }
 
 .verschuifBoek_enkel {
-    transform: translate(150px, 150px);
+    transform: translate(200px, 300px);
+}
+
+.radio_enkel_pa {
+    transform: translateY(17px);
 }

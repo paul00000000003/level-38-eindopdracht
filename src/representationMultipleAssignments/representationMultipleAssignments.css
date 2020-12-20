@@ -83,7 +83,7 @@
                     }
                     
                     .assignmentLabel {
-                        transform: translate(50px, 220px);
+                        transform: translate(50px, 200px);
                     }
                     
                     #selectContainer {
@@ -95,8 +95,8 @@
                         font-size: 20px;
                     }
                     
-                    .radio_score {
-                        transform: translate(-200px, 10px);
+                    .radio_score_multass {
+                        transform: translate(-250px, 25px);
                     }
                     
                     .sortScoreLabel {
@@ -105,4 +105,8 @@
                     
                     .positionChart {
                         transform: translateY(80px);
+                    }
+                    
+                    .radioButtons_multipleStudents {
+                        display: flex;
                     }

@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Scores from "./Scores";
 import Home from "../home/Home";
 import RepresentationPerStudent from "../representationPerStudent/RepresentationPerStudent";
-import RepresentationPerAssignment from "../representationPerAssignment/RepresentationPerAssignment";
+import RepresentationPerAssignmentMaster from "../representationPerAssignment/RepresentationPerAssignmentMaster";
 import RepresentationMultipleStudents from "../representationMultipleStudents/RepresentationMultipleStudents";
 import RepresentationMultipleAssignments from "../representationMultipleAssignments/RepresentationMultipleAssignments";
 import "./App.css";
@@ -87,7 +87,7 @@ class App extends Component {
               <RepresentationMultipleStudents scores={this.state.scores} />
             </Route>
             <Route path="/representationPerAssignment">
-              <RepresentationPerAssignment scores={this.state.scores} />
+              <RepresentationPerAssignmentMaster scores={this.state.scores} />
             </Route>
             <Route path="/representationMultipleAssignments">
               <RepresentationMultipleAssignments scores={this.state.scores} />

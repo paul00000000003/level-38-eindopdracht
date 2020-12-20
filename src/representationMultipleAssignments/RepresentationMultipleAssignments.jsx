@@ -6,7 +6,6 @@ import MakeLineChart from "./MakeLineChart";
 let assignments = [];
 let students = [];
 let assignment = "";
-let outputselection = [];
 let data = [];
 let chosenAssignments = [];
 
@@ -195,7 +194,7 @@ class RepresentationMultipleAssignments extends React.Component {
           <div id="sortScoreSpot">
             <p className="sortScoreLabel">Moeilijk</p>
             <input
-              className="radio_score"
+              className="radio_score_multass"
               type="radio"
               name="scorechoice"
               value="Moeilijk"
@@ -203,7 +202,7 @@ class RepresentationMultipleAssignments extends React.Component {
             />
             <p className="sortScoreLabel">Leuk</p>
             <input
-              className="radio_score"
+              className="radio_score_multass"
               type="radio"
               name="scorechoice"
               value="Leuk"

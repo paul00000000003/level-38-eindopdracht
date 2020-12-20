@@ -2,6 +2,10 @@
     list-style-type: none;
 }
 
+.sortScoreLabel {
+    width: 150px;
+}
+
 .soortScore {
     display: -webkit-box;
     display: -ms-flexbox;
