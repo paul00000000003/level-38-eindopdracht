@@ -25,7 +25,7 @@ class MakeLineChart extends React.Component {
             data={this.props.dataLineChart}
             margin={{ top: 5 }}
           >
-            <XAxis dataKey="opdracht" />
+            <XAxis dataKey="assignment" />
             <YAxis />
             <CartesianGrid strokeDasharray="3 3" />
             <Tooltip />
@@ -138,7 +138,7 @@ class MakeLineChart extends React.Component {
           data={this.props.dataLineChart}
           margin={{ top: 5 }}
         >
-          <XAxis dataKey="student" />
+          <XAxis dataKey="assignment" />
           <YAxis />
           <CartesianGrid strokeDasharray="3 3" />
           <Tooltip />
