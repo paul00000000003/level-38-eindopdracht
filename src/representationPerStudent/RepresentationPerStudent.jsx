@@ -1,12 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import MakeHistogram from "./MakeHistogram";
 import StudentPerLinkRegel from "./StudentPerLinkRegel";
 import "./representationPerStudent.css";
-import MakeLineChart from "./MakeLineChart";
+import MakeGraph from "./MakeGraph";
 
 let students = [];
-let data = [];
 let assignments = [];
 let outputselectie = [];
 let gekozenStudents = [];
@@ -35,73 +33,23 @@ const filterScores = (scores) => {
   return [students, assignments];
 };
 
-const make_lineChart_data = (chosenStudents, assignments, scores) => {
-  let dataLineChart = [];
-  assignments.forEach((element) => {
-    const item = { assignment: element };
-    dataLineChart.push(item);
-  });
-
-  scores.forEach((element) => {
-    let spotStudent = chosenStudents.indexOf(element.student);
-    if (spotStudent > -1 && spotStudent < 6) {
-      let spotAssignment = assignments.indexOf(element.assignment);
-      switch (spotStudent) {
-        case 0:
-          dataLineChart[spotAssignment]["grade1Difficult"] =
-            element.difficultGrade;
-          dataLineChart[spotAssignment]["grade1Nice"] = element.niceGrade;
-          break;
-        case 1:
-          dataLineChart[spotAssignment]["grade2Difficult"] =
-            element.difficultGrade;
-          dataLineChart[spotAssignment]["grade2Nice"] = element.niceGrade;
-          break;
-        case 2:
-          dataLineChart[spotAssignment]["grade3Difficult"] =
-            element.difficultGrade;
-          dataLineChart[spotAssignment]["grade3Nice"] = element.niceGrade;
-          break;
-        case 3:
-          dataLineChart[spotAssignment]["grade4Difficult"] =
-            element.difficultGrade;
-          dataLineChart[spotAssignment]["grade4Nice"] = element.niceGrade;
-          break;
-        case 4:
-          dataLineChart[spotAssignment]["grade5Difficult"] =
-            element.difficultGrade;
-          dataLineChart[spotAssignment]["grade5Nice"] = element.niceGrade;
-          break;
-        case 5:
-          dataLineChart[spotAssignment]["grade6Difficult"] =
-            element.difficultGrade;
-          dataLineChart[spotAssignment]["grade6Nice"] = element.niceGrade;
-          break;
-        default:
-          console.log("onverwacht");
-      }
-    }
-  });
-  return dataLineChart;
-};
-
 class RepresentationPerStudent extends React.Component {
   constructor() {
     super();
     this.state = {
       scoresHistogram: [],
       scores: [],
-      scoreKeuze: "Beide",
+      scoreChoice: "Beide",
       student: "",
       makeHistogram: false,
       gekozenStudents: [],
     };
-    this.scoreKeuzeHandle = this.scoreKeuzeHandle.bind(this);
+    this.scoreChoiceHandle = this.scoreChoiceHandle.bind(this);
     this.makegraph = this.makegraph.bind(this);
   }
 
-  scoreKeuzeHandle(e) {
-    this.setState({ scoreKeuze: e.target.value, makeHistogram: true });
+  scoreChoiceHandle(e) {
+    this.setState({ scoreChoice: e.target.value, makeHistogram: true });
   }
 
   makegraph(index, link, student) {
@@ -113,16 +61,9 @@ class RepresentationPerStudent extends React.Component {
     outputselectie = Array.from(document.getElementsByClassName("outputoptie"));
     outputselectie.forEach((element) => (element.checked = false));
     link.classList.add("maakbold");
-    gekozenStudents = [student];
-    data = make_lineChart_data(
-      gekozenStudents,
-      this.state.assignments,
-      this.props.scores
-    );
     this.setState({
       makegraph: true,
       student,
-      dataLineChart: data,
       gekozenStudents,
     });
   }
@@ -159,11 +100,11 @@ class RepresentationPerStudent extends React.Component {
       let student = element;
       return (
         <Route key={index} path={str}>
-          <MakeHistogram
+          <MakeGraph
             key={index}
             student={student}
-            scoreKeuze={this.state.scoreKeuze}
-            scoresHistogram={this.props.scores.filter(
+            scoreChoice={this.state.scoreChoice}
+            scoresGraph={this.props.scores.filter(
               (element) => element.student === student
             )}
           />
@@ -186,9 +127,9 @@ class RepresentationPerStudent extends React.Component {
                 <input
                   className="radioScore"
                   type="radio"
-                  name="scorekeuze"
+                  name="scorechoice"
                   value="Beide"
-                  onChange={this.scoreKeuzeHandle}
+                  onChange={this.scoreChoiceHandle}
                   defaultChecked
                 />
               </div>
@@ -197,9 +138,9 @@ class RepresentationPerStudent extends React.Component {
                 <input
                   className="radioScore"
                   type="radio"
-                  name="scorekeuze"
+                  name="scorechoice"
                   value="Moeilijk"
-                  onChange={this.scoreKeuzeHandle}
+                  onChange={this.scoreChoiceHandle}
                 />
               </div>
               <div className="soortScore">
@@ -207,9 +148,9 @@ class RepresentationPerStudent extends React.Component {
                 <input
                   className="radioScore"
                   type="radio"
-                  name="scorekeuze"
+                  name="scorechoice"
                   value="Leuk"
-                  onChange={this.scoreKeuzeHandle}
+                  onChange={this.scoreChoiceHandle}
                 />
               </div>
             </div>
@@ -217,21 +158,12 @@ class RepresentationPerStudent extends React.Component {
           <hr />
           {this.state.makegraph ? (
             <div id="graphcontainer">
-              <div className="posgrafiek">
-                <Switch>{studentsRoutes}</Switch>
-                <div>
-                  <MakeLineChart
-                    dataLineChart={this.state.dataLineChart}
-                    students={this.state.gekozenStudents}
-                    scorekeuze={this.state.scoreKeuze}
-                  />
-                </div>
-              </div>
+              <Switch>{studentsRoutes}</Switch>
             </div>
           ) : (
             <div>
               <img
-                className="verschuifPlaatje_enkel"
+                className="shiftImage_single"
                 src="https://www.mupload.nl/img/0npaaxw.gif"
                 alt="student"
                 width="300px"

@@ -2,15 +2,16 @@ import React from "react";
 import { BarChart, Bar, XAxis, YAxis, Tooltip } from "recharts";
 import "./representationPerStudent.css";
 
-class MaakHistogram extends React.Component {
+class MakeBarchart extends React.Component {
   constructor() {
     super();
-    this.state = { scoreKeuze: "", maakHistogram: false };
+    this.state = { scoreChoice: "" };
   }
 
   render() {
     let barChartKolommenKeuze = [];
-    switch (this.props.scoreKeuze) {
+    console.log("keuze score : " + this.props.scoreChoice);
+    switch (this.props.scoreChoice) {
       case "Beide":
         barChartKolommenKeuze = [
           <Bar
@@ -40,8 +41,7 @@ class MaakHistogram extends React.Component {
     }
     return (
       <div>
-        <h1 className="centreerNaamEnkelHistogram">{this.props.student}</h1>
-        <BarChart width={730} height={250} data={this.props.scoresHistogram}>
+        <BarChart width={730} height={250} data={this.props.scoresGraph}>
           <XAxis dataKey="assignment" />
           <YAxis />
           <Tooltip />
@@ -52,4 +52,4 @@ class MaakHistogram extends React.Component {
   }
 }
 
-export default MaakHistogram;
+export default MakeBarchart;

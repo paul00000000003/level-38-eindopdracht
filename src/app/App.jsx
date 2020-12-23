@@ -18,10 +18,6 @@ class App extends Component {
     this.setState({ scores: Scores, schermGeladen: true });
   }
 
-  /*
-  
-  */
-
   render() {
     if (this.state.schermGeladen) {
       return (
@@ -39,8 +35,7 @@ class App extends Component {
             <div>
               <ul className="scoremogelijkheden">
                 <li className="li-nav">
-                  {" "}
-                  <Link className="link nav-link" to={"/"}>
+                  <Link className="link nav-link" to="/">
                     Home
                   </Link>
                 </li>

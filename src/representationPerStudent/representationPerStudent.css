@@ -74,11 +74,11 @@ li {
     height: 100px;
 }
 
-.verschuifPlaatje_enkel {
+.shiftImage_single {
     transform: translate(600px, 100px);
 }
 
-.posgrafiek {
+.posgraph {
     width: 720px;
     transform: translateX(400px);
 }
