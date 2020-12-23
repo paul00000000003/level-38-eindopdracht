@@ -34,37 +34,37 @@ const make_lineChart_data = (assign, scores) => {
   scores.forEach((element) => {
     let spotAssign = chosenAssignments.indexOf(element.assignment);
     if (spotAssign > -1 && spotAssign < 6) {
-      let spotstudent = students.indexOf(element.student);
+      let spotStudent = students.indexOf(element.student);
       switch (spotAssign) {
         case 0:
-          dataLineChart[spotstudent]["grade1Difficult"] =
+          dataLineChart[spotStudent]["grade1Difficult"] =
             element.difficultGrade;
-          dataLineChart[spotstudent]["grade1Nice"] = element.niceGrade;
+          dataLineChart[spotStudent]["grade1Nice"] = element.niceGrade;
           break;
         case 1:
-          dataLineChart[spotstudent]["grade2Difficult"] =
+          dataLineChart[spotStudent]["grade2Difficult"] =
             element.difficultGrade;
-          dataLineChart[spotstudent]["grade2Nice"] = element.niceGrade;
+          dataLineChart[spotStudent]["grade2Nice"] = element.niceGrade;
           break;
         case 2:
-          dataLineChart[spotstudent]["grade3Difficult"] =
+          dataLineChart[spotStudent]["grade3Difficult"] =
             element.difficultGrade;
-          dataLineChart[spotstudent]["grade3Nice"] = element.niceGrade;
+          dataLineChart[spotStudent]["grade3Nice"] = element.niceGrade;
           break;
         case 3:
-          dataLineChart[spotstudent]["grade4Difficult"] =
+          dataLineChart[spotStudent]["grade4Difficult"] =
             element.difficultGrade;
-          dataLineChart[spotstudent]["grade4Nice"] = element.niceGrade;
+          dataLineChart[spotStudent]["grade4Nice"] = element.niceGrade;
           break;
         case 4:
-          dataLineChart[spotstudent]["grade5Difficult"] =
+          dataLineChart[spotStudent]["grade5Difficult"] =
             element.difficultGrade;
-          dataLineChart[spotstudent]["grade5Nice"] = element.niceGrade;
+          dataLineChart[spotStudent]["grade5Nice"] = element.niceGrade;
           break;
         case 5:
-          dataLineChart[spotstudent]["grade6Difficult"] =
+          dataLineChart[spotStudent]["grade6Difficult"] =
             element.difficultGrade;
-          dataLineChart[spotstudent]["grade6Nice"] = element.niceGrade;
+          dataLineChart[spotStudent]["grade6Nice"] = element.niceGrade;
           break;
         default:
           console.log("onverwacht");
@@ -196,7 +196,7 @@ class RepresentationMultipleAssignments extends React.Component {
             <input
               className="radio_score_multass"
               type="radio"
-              name="scorechoice"
+              name="scoreChoice"
               value="Moeilijk"
               onChange={this.scoreChoiceHandle}
             />
@@ -204,7 +204,7 @@ class RepresentationMultipleAssignments extends React.Component {
             <input
               className="radio_score_multass"
               type="radio"
-              name="scorechoice"
+              name="scoreChoice"
               value="Leuk"
               onChange={this.scoreChoiceHandle}
               defaultChecked
@@ -243,7 +243,7 @@ class RepresentationMultipleAssignments extends React.Component {
               <MakeLineChart
                 dataLineChart={this.state.dataLineChart}
                 assignments={this.state.chosenAssignments}
-                scorechoice={this.state.scoreChoice}
+                scoreChoice={this.state.scoreChoice}
               />
             </div>
           ) : (

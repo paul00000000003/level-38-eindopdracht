@@ -13,7 +13,7 @@ import {
 class MakeLinechart extends React.Component {
   render() {
     let color = "#8400D3";
-    let datakey = "cijfer1Leuk";
+    let dataKey = "cijfer1Leuk";
     let name = "";
     if (this.props.scoreChoice === "Beide") {
       return (
@@ -48,11 +48,11 @@ class MakeLinechart extends React.Component {
     } else {
       if (this.props.scoreChoice === "Leuk") {
         color = "#8884d8";
-        datakey = "niceGrade";
+        dataKey = "niceGrade";
         name = "cijfer leuk student " + this.props.student;
       } else {
         color = "#FF0000"; //rood
-        datakey = "difficultGrade";
+        dataKey = "difficultGrade";
         name = "cijfer moeilijk student " + this.props.student;
       }
       return (
@@ -72,7 +72,7 @@ class MakeLinechart extends React.Component {
             <Line
               name={name}
               type="monotone"
-              dataKey={datakey}
+              dataKey={dataKey}
               stroke={color}
             />
           </LineChart>

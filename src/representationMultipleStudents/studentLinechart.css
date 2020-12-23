@@ -1,18 +1,18 @@
-.studentregel {
+.studentLine {
     list-style-type: none;
 }
 
-.soortScore {
+.sortScore {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
 }
 
-.soortScore_leukenbeide {
+.sortScore_niceAndBoth {
     width: 100px;
 }
 
-.soortScore_moeilijk {
+.sortScore_difficult {
     width: 150px;
 }
 
@@ -26,21 +26,21 @@
     background-color: aqua;
 }
 
-.regel {
+.line {
     list-style-type: none;
     width: 300px;
 }
 
-.linkregel {
+.linkLine {
     color: black;
 }
 
-.regelMeerdereStudenten {
+.lineMultipleStudents {
     color: black;
     width: 200px;
 }
 
-.ullijstje {
+.ulListMultipleStudents {
     display: flex;
 }
 

@@ -92,18 +92,18 @@ class RepresentationMultipleStudents extends React.Component {
       scoreChoice: "Leuk",
       student: "",
       makeHistogram: false,
-      linechartOk: false,
+      lineChartOk: false,
       chosenStudents: [],
     };
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(index, vinkje) {
+  handleChange(index, dash) {
     chosenStudents = this.state.chosenStudents;
-    if (vinkje.checked === true) {
+    if (dash.checked === true) {
       if (chosenStudents.length === 6) {
         alert("Er kunnen slechts 6 studenten worden gekozen");
-        vinkje.checked = false;
+        dash.checked = false;
       } else chosenStudents.push(this.state.students[index]);
     } else {
       let index2 = -1;
@@ -130,7 +130,7 @@ class RepresentationMultipleStudents extends React.Component {
       );
       this.setState({
         chosenStudents,
-        linechartOk: true,
+        lineChartOk: true,
         dataLineChart: data,
       });
     }
@@ -150,21 +150,21 @@ class RepresentationMultipleStudents extends React.Component {
   render() {
     sortStudents(students);
 
-    let studentenLinkRegels = students.map((element, index) => {
+    let studentsLinkLines = students.map((element, index) => {
       return (
         <StudentLine
           name={element}
           key={index}
-          handlechange={this.handleChange}
+          handleChange={this.handleChange}
           index={index}
         />
       );
     });
     return (
       <div>
-        <h1 className="titel">Kies een of meerdere studenten</h1>
+        <h1 className="title">Kies een of meerdere studenten</h1>
         <nav>
-          <ul className="ullijstje">{studentenLinkRegels}</ul>
+          <ul id="ulListMS">{studentsLinkLines}</ul>
         </nav>
         {this.state.chosenStudents.length > 0 ? (
           <MakeLineChart
@@ -175,13 +175,13 @@ class RepresentationMultipleStudents extends React.Component {
         ) : (
           <div>
             <img
-              className="verschuifPlaatje_multiple"
+              id="shiftPictureMultiple"
               src="https://www.mupload.nl/img/0npaaxw.gif"
               alt="studenten"
               width="300px"
             />
             <img
-              className="verschuifPlaatje_multiple"
+              id="shiftPictureMultiple"
               src="https://www.mupload.nl/img/0npaaxw.gif"
               alt="studenten"
               width="300px"

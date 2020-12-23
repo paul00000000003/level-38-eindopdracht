@@ -1,13 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import StudentPerLinkRegel from "./StudentPerLinkRegel";
+import StudentPerLinkLine from "./StudentPerLinkLine";
 import "./representationPerStudent.css";
 import MakeGraph from "./MakeGraph";
 
 let students = [];
 let assignments = [];
-let outputselectie = [];
-let gekozenStudents = [];
+let outputSelection = [];
 
 const sortStudents = (students) =>
   students.sort(function (a, b) {
@@ -42,7 +41,6 @@ class RepresentationPerStudent extends React.Component {
       scoreChoice: "Beide",
       student: "",
       makeHistogram: false,
-      gekozenStudents: [],
     };
     this.scoreChoiceHandle = this.scoreChoiceHandle.bind(this);
     this.makegraph = this.makegraph.bind(this);
@@ -53,25 +51,26 @@ class RepresentationPerStudent extends React.Component {
   }
 
   makegraph(index, link, student) {
-    let linkjes = Array.from(document.getElementsByClassName("linkklas"));
-    linkjes.forEach((element) => {
-      if (element.classList.contains("maakbold"))
-        element.classList.remove("maakbold");
+    let links = Array.from(document.getElementsByClassName("linkClass"));
+    links.forEach((element) => {
+      if (element.classList.contains("makebold"))
+        element.classList.remove("makebold");
     });
-    outputselectie = Array.from(document.getElementsByClassName("outputoptie"));
-    outputselectie.forEach((element) => (element.checked = false));
-    link.classList.add("maakbold");
+    outputSelection = Array.from(
+      document.getElementsByClassName("outputOption")
+    );
+    outputSelection.forEach((element) => (element.checked = false));
+    link.classList.add("makebold");
     this.setState({
       makegraph: true,
       student,
-      gekozenStudents,
     });
   }
 
   componentDidMount() {
-    let gefilterd = filterScores(this.props.scores);
-    students = gefilterd[0];
-    assignments = gefilterd[1];
+    let filtered = filterScores(this.props.scores);
+    students = filtered[0];
+    assignments = filtered[1];
     this.setState({
       scores: this.props.scores,
       students: students,
@@ -81,10 +80,10 @@ class RepresentationPerStudent extends React.Component {
 
   render() {
     sortStudents(students);
-    let studentsLinkRegels = students.map((element, index) => {
+    let studentsLinkLines = students.map((element, index) => {
       let str = "./" + element.toLowerCase();
       return (
-        <StudentPerLinkRegel
+        <StudentPerLinkLine
           str={str}
           el={element}
           key={index}
@@ -114,48 +113,44 @@ class RepresentationPerStudent extends React.Component {
 
     return (
       <Router>
-        <div id="bovenruimte"></div>
-        <div id="maincontainer">
+        <div id="upperSpace"></div>
+        <div id="mainContainer">
           <div id="aside">
             <nav id="nav">
-              <ul>{studentsLinkRegels}</ul>
+              <ul>{studentsLinkLines}</ul>
             </nav>
-            <div>
-              <p className="soortScore">Scorekeuze : </p>
-              <div className="soortScore">
-                <p className="soortScoreLabel">Beiden</p>
-                <input
-                  className="radioScore"
-                  type="radio"
-                  name="scorechoice"
-                  value="Beide"
-                  onChange={this.scoreChoiceHandle}
-                  defaultChecked
-                />
-              </div>
-              <div className="soortScore">
-                <p className="soortScoreLabel">Moeilijkheid</p>
-                <input
-                  className="radioScore"
-                  type="radio"
-                  name="scorechoice"
-                  value="Moeilijk"
-                  onChange={this.scoreChoiceHandle}
-                />
-              </div>
-              <div className="soortScore">
-                <p className="soortScoreLabel">Leuk</p>
-                <input
-                  className="radioScore"
-                  type="radio"
-                  name="scorechoice"
-                  value="Leuk"
-                  onChange={this.scoreChoiceHandle}
-                />
-              </div>
+            <div className="containerScoreSS">
+              <p className="scoreLineSS">Beiden</p>
+              <input
+                className="dashScoreSS"
+                type="radio"
+                name="scoreChoice"
+                value="Beide"
+                onChange={this.scoreChoiceHandle}
+                defaultChecked
+              />
+            </div>
+            <div className="containerScoreSS">
+              <p className="scoreLineSS">Moeilijkheid</p>
+              <input
+                className="dashScoreSS"
+                type="radio"
+                name="scoreChoice"
+                value="Moeilijk"
+                onChange={this.scoreChoiceHandle}
+              />
+            </div>
+            <div className="containerScoreSS">
+              <p className="scoreLineSS">Leuk</p>
+              <input
+                className="dashScoreSS"
+                type="radio"
+                name="scoreChoice"
+                value="Leuk"
+                onChange={this.scoreChoiceHandle}
+              />
             </div>
           </div>
-          <hr />
           {this.state.makegraph ? (
             <div id="graphcontainer">
               <Switch>{studentsRoutes}</Switch>
@@ -163,7 +158,7 @@ class RepresentationPerStudent extends React.Component {
           ) : (
             <div>
               <img
-                className="shiftImage_single"
+                className="shiftImage_singleStudent"
                 src="https://www.mupload.nl/img/0npaaxw.gif"
                 alt="student"
                 width="300px"

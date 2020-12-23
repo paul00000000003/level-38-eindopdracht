@@ -5,11 +5,11 @@ class StudentLine extends React.Component {
   render() {
     let nameStudent = this.props.name;
     return (
-      <li className="regelMeerdereStudenten">
+      <li className="lineMultipleStudents">
         <input
           type="checkbox"
-          name="studentvink"
-          onChange={(e) => this.props.handlechange(this.props.index, e.target)}
+          name="studentDash"
+          onChange={(e) => this.props.handleChange(this.props.index, e.target)}
         />
         {nameStudent}
       </li>

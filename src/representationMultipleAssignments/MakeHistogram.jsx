@@ -1,33 +1,33 @@
 import React from "react";
 import { BarChart, Bar, XAxis, YAxis, Tooltip } from "recharts";
 
-class MaakHistogram extends React.Component {
+class MakeHistogram extends React.Component {
   constructor() {
     super();
     this.state = {};
   }
 
   render() {
-    let barChartKolommenKeuze = [];
+    let barChartColumnChoice = [];
     switch (this.props.scoreChoice) {
       case "Beide":
-        barChartKolommenKeuze = [
+        barChartColumnChoice = [
           <Bar key={1} dataKey="difficultGrade" fill="#8884d8" />,
           <Bar key={2} dataKey="niceGrade" fill="#98FF98" />,
         ];
         break;
       case "Moeilijk":
-        barChartKolommenKeuze = [
+        barChartColumnChoice = [
           <Bar key={3} dataKey="difficultGrade" fill="#8884d8" />,
         ];
         break;
       case "Leuk":
-        barChartKolommenKeuze = [
+        barChartColumnChoice = [
           <Bar key={4} dataKey="niceGrade" fill="#98FF98" />,
         ];
         break;
       default:
-        barChartKolommenKeuze = [];
+        barChartColumnChoice = [];
     }
     return (
       <div>
@@ -36,11 +36,11 @@ class MaakHistogram extends React.Component {
           <XAxis dataKey="student" />
           <YAxis />
           <Tooltip />
-          {barChartKolommenKeuze}
+          {barChartColumnChoice}
         </BarChart>
       </div>
     );
   }
 }
 
-export default MaakHistogram;
+export default MakeHistogram;

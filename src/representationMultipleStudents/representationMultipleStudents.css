@@ -1,4 +1,4 @@
-.studentregel {
+.studentLine {
     list-style-type: none;
 }
 
@@ -6,17 +6,17 @@
     width: 150px;
 }
 
-.soortScore {
+.sortScore {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
 }
 
-.soortScore_leukenbeide {
+.sortScore_niceAndBoth {
     width: 100px;
 }
 
-.soortScore_moeilijk {
+.sortScore_difficult {
     width: 150px;
 }
 
@@ -30,29 +30,33 @@
     background-color: aqua;
 }
 
-.regel {
+.line {
     list-style-type: none;
 }
 
-.linkregel {
+.linkLine {
     color: black;
 }
 
-.titel {
+.title {
     width: 800px;
     margin: auto;
     font-weight: normal;
     transform: translate(50px);
 }
 
-.verschuifPlaatje_multiple {
-    transform: translateY(700px);
-    transform: translateX(600px);
+#shiftPictureMultiple {
+    transform: translate(600px, 200px);
 }
 
 #remark {
     height: 1em;
     width: 150px;
+}
+
+#ulListMS {
+    display: flex;
+    justify-content: space-around;
 }
 
 

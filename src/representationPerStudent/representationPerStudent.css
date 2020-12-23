@@ -1,18 +1,25 @@
-.studentregel {
+.studentLine {
     list-style-type: none;
 }
 
-.soortScore_leukenbeide {
+.sortScore_niceAndBoth {
     width: 100px;
 }
 
-.soortScore_moeilijk {
+.sortScore_difficult {
     width: 150px;
 }
 
-.radioScore {
-    margin-top: 20px;
-    margin-left: 15px;
+#radioScore_bothSS {
+    transform: translate(-200px, 15px)
+}
+
+#radioScoreDifficultSS {
+    transform: translate(-200px, 15px)
+}
+
+#radioScoreNiceSS {
+    translate: translate(-200px, 15px)
 }
 
 .button {
@@ -21,30 +28,28 @@
     background-color: aqua;
 }
 
-.regel {
+.Line {
     list-style-type: none;
 }
 
-.linkregel {
+.linkLine {
     color: white;
 }
 
-#maincontainer {
+#mainContainer {
     width: 200px;
     display: flex
 }
 
 #graphcontainer {
-    display: flex;
-    flex-direction: column;
+    transform: translateX(300px);
 }
 
-.soortscore {
+.sortScore {
+    width: 50px;
     margin-left: 50px;
-}
-
-.switch {
-    border: 3px solid black
+    height: 1.2em;
+    transform: translateX(-600px);
 }
 
 #nav {
@@ -57,24 +62,19 @@ li {
     color: white;
 }
 
-.soortScore {
-    height: 1.2em;
-}
-
-.soortScoreLabel {
-    width: 180px;
+.sortScoreLabel {
+    width: 100px;
 }
 
 #aside {
     width: 205px;
-    border: solid 10px white;
 }
 
-#bovenruimte {
+#upperspace {
     height: 100px;
 }
 
-.shiftImage_single {
+.shiftImage_singleStudent {
     transform: translate(600px, 100px);
 }
 
@@ -85,4 +85,20 @@ li {
 
 .centerNameSingleSHistogram {
     text-align: center;
+}
+
+#sortScoreSingleSContainer {
+    width: 250px;
+}
+
+.scoreLineSS {
+    width: 100px;
+}
+
+.containerScoreSS {
+    display: flex;
+}
+
+.dashScoreSS {
+    transform: translateY(15px);
 }

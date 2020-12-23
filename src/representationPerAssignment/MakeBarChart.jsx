@@ -3,10 +3,10 @@ import { BarChart, Bar, XAxis, YAxis, Tooltip } from "recharts";
 
 class MakeBarChart extends React.Component {
   render() {
-    let barChartKolommenKeuze = [];
+    let barChartColumnChoice = [];
     switch (this.props.scoreChoice) {
       case "Beide":
-        barChartKolommenKeuze = [
+        barChartColumnChoice = [
           <Bar
             key={1}
             name="cijfer moeilijk"
@@ -17,7 +17,7 @@ class MakeBarChart extends React.Component {
         ];
         break;
       case "Moeilijk":
-        barChartKolommenKeuze = [
+        barChartColumnChoice = [
           <Bar
             key={3}
             name="cijfer moeilijk"
@@ -27,12 +27,12 @@ class MakeBarChart extends React.Component {
         ];
         break;
       case "Leuk":
-        barChartKolommenKeuze = [
+        barChartColumnChoice = [
           <Bar key={4} name="cijfer leuk" dataKey="niceGrade" fill="#98FF98" />,
         ];
         break;
       default:
-        barChartKolommenKeuze = [];
+        barChartColumnChoice = [];
     }
     return (
       <div>
@@ -41,7 +41,7 @@ class MakeBarChart extends React.Component {
           <XAxis dataKey="student" />
           <YAxis />
           <Tooltip />
-          {barChartKolommenKeuze}
+          {barChartColumnChoice}
         </BarChart>
       </div>
     );

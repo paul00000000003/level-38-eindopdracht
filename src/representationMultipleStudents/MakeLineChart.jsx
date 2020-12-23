@@ -1,6 +1,5 @@
 import React from "react";
 import "./makeLineChartMultipleStudents.css";
-
 import {
   LineChart,
   Line,
@@ -12,56 +11,56 @@ import {
 } from "recharts";
 
 class MakeLineChart extends React.Component {
-  state = { scorechoice: "Leuk" };
+  state = { scoreChoice: "Leuk" };
 
   scoreKeuzeHandle = () => {
-    if (this.state.scorechoice === "Leuk")
-      this.setState({ scorechoice: "Moeilijk" });
-    else this.setState({ scorechoice: "Leuk" });
+    if (this.state.scoreChoice === "Leuk")
+      this.setState({ scoreChoice: "Moeilijk" });
+    else this.setState({ scoreChoice: "Leuk" });
   };
 
   render() {
     let color = "#8400D3";
-    let datakey = "cijfer1Leuk";
+    let dataKey = "cijfer1Leuk";
     let name_label;
     let lines = [];
-    if (this.state.scorechoice === "Leuk") {
+    if (this.state.scoreChoice === "Leuk") {
       lines = this.props.students.map((element, index) => {
         switch (index) {
           case 0:
             color = "#FF0000"; //rood
-            datakey = "grade1Nice";
+            dataKey = "grade1Nice";
             break;
           case 1:
             color = "#7FFFD4"; //aquamarijn
-            datakey = "grade2Nice";
+            dataKey = "grade2Nice";
             break;
           case 2:
             color = "#008000"; //groen
-            datakey = "grade3Nice";
+            dataKey = "grade3Nice";
             break;
           case 3:
             color = "#8400D3"; //paars
-            datakey = "grade4Nice";
+            dataKey = "grade4Nice";
             break;
           case 4:
             color = "#FFA500"; //oranje
-            datakey = "grade5Nice";
+            dataKey = "grade5Nice";
             break;
           case 5:
             color = "#A65E2E"; //bruin
-            datakey = "grade6Nice";
+            dataKey = "grade6Nice";
             break;
           default:
             color = "#FF0000"; //paars
-            datakey = "grad1Nice";
+            dataKey = "grad1Nice";
         }
         name_label = "cijfer leuk student " + element;
         return (
           <Line
             name={name_label}
             type="monotone"
-            dataKey={datakey}
+            dataKey={dataKey}
             stroke={color}
             key={index}
           />
@@ -72,31 +71,31 @@ class MakeLineChart extends React.Component {
         switch (index) {
           case 0:
             color = "#FF0000"; //rood
-            datakey = "grade1Difficult";
+            dataKey = "grade1Difficult";
             break;
           case 1:
             color = "#7FFFD4"; //aquamarijn
-            datakey = "grade2Difficult";
+            dataKey = "grade2Difficult";
             break;
           case 2:
             color = "#008000"; //groen
-            datakey = "grade3Difficult";
+            dataKey = "grade3Difficult";
             break;
           case 3:
             color = "#8400D3"; //paars
-            datakey = "grade4Difficult";
+            dataKey = "grade4Difficult";
             break;
           case 4:
             color = "#FFA500"; //oranje
-            datakey = "grade5Difficult";
+            dataKey = "grade5Difficult";
             break;
           case 5:
             color = "#A65E2E"; //bruin
-            datakey = "grade6Difficult";
+            dataKey = "grade6Difficult";
             break;
           default:
             color = "#FF0000"; //paars
-            datakey = "grade1Difficult";
+            dataKey = "grade1Difficult";
         }
         name_label = "cijfer moeilijk student " + element;
         console.log(name_label);
@@ -104,7 +103,7 @@ class MakeLineChart extends React.Component {
           <Line
             name={name_label}
             type="monotone"
-            dataKey={datakey}
+            dataKey={dataKey}
             stroke={color}
             key={index + 6}
           />
@@ -134,7 +133,7 @@ class MakeLineChart extends React.Component {
         </form>
         <hr />
         <LineChart
-          className="linechart"
+          className="lineChart"
           width={1000}
           height={375}
           data={this.props.dataLineChart}

@@ -75,7 +75,7 @@ class MakeLineChart extends React.Component {
     return (
       <LineChart
         key="3"
-        className="linechart"
+        className="lineChart"
         width={730}
         height={250}
         data={this.props.scores}

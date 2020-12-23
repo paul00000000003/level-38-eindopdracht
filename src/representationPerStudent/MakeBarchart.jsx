@@ -9,11 +9,10 @@ class MakeBarchart extends React.Component {
   }
 
   render() {
-    let barChartKolommenKeuze = [];
-    console.log("keuze score : " + this.props.scoreChoice);
+    let barChartColumnChoice = [];
     switch (this.props.scoreChoice) {
       case "Beide":
-        barChartKolommenKeuze = [
+        barChartColumnChoice = [
           <Bar
             name="Cijfers moeilijk"
             dataKey="difficultGrade"
@@ -23,7 +22,7 @@ class MakeBarchart extends React.Component {
         ];
         break;
       case "Moeilijk":
-        barChartKolommenKeuze = [
+        barChartColumnChoice = [
           <Bar
             name="Cijfers moeilijk"
             dataKey="difficultGrade"
@@ -32,12 +31,12 @@ class MakeBarchart extends React.Component {
         ];
         break;
       case "Leuk":
-        barChartKolommenKeuze = [
+        barChartColumnChoice = [
           <Bar name="Cijfers leuk" dataKey="niceGrade" fill="#98FF98" />,
         ];
         break;
       default:
-        barChartKolommenKeuze = [];
+        barChartColumnChoice = [];
     }
     return (
       <div>
@@ -45,7 +44,7 @@ class MakeBarchart extends React.Component {
           <XAxis dataKey="assignment" />
           <YAxis />
           <Tooltip />
-          {barChartKolommenKeuze}
+          {barChartColumnChoice}
         </BarChart>
       </div>
     );

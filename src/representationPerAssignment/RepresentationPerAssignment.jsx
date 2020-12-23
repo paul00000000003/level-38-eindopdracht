@@ -12,7 +12,7 @@ function RepresentationPerAssignment(props) {
   const [makeGraph, setMakeGraph] = useState(false);
   const [scoreChoice, setScoreChoice] = useState("Beide");
 
-  const handleChange2 = (e) => {
+  const handleChange = (e) => {
     let reference;
     reference = "/" + e.target.value;
     setMakeGraph(true);
@@ -21,7 +21,6 @@ function RepresentationPerAssignment(props) {
   };
 
   const scoreChoiceHandle = (e) => {
-    console.log("gedrukt " + e.target.value);
     setScoreChoice(e.target.value);
   };
 
@@ -55,18 +54,20 @@ function RepresentationPerAssignment(props) {
     <div className="singleContainerPerAssignment">
       <form className="formContainer">
         <h1 className="headerAssignments">Opdrachten</h1>
-        <select className="selectSingle" onChange={handleChange2}>
+        <select className="selectSingle" onChange={handleChange}>
           <option value=""></option>
           {links}
         </select>
-        <p className="sortScore">Scorekeuze : </p>
+        <br />
+        <br />
+        <p className="sortScoreMain">Scorekeuze : </p>
 
         <div className="sortScore">
           <p>Beide</p>
           <input
-            className="radio_enkel_pa"
+            className="radio_single_pa"
             type="radio"
-            name="scorechoice"
+            name="scoreChoice"
             value="Beide"
             onChange={scoreChoiceHandle}
             defaultChecked
@@ -76,9 +77,9 @@ function RepresentationPerAssignment(props) {
         <div className="sortScore">
           <p>Moeilijk</p>
           <input
-            className="radio_enkel_pa"
+            className="radio_single_pa"
             type="radio"
-            name="scorechoice"
+            name="scoreChoice"
             value="Moeilijk"
             onChange={scoreChoiceHandle}
           />
@@ -86,9 +87,9 @@ function RepresentationPerAssignment(props) {
         <div className="sortScore">
           <p>Leuk</p>
           <input
-            className="radio_enkel_pa"
+            className="radio_single_pa"
             type="radio"
-            name="scorechoice"
+            name="scoreChoice"
             value="Leuk"
             onChange={scoreChoiceHandle}
           />
@@ -99,7 +100,7 @@ function RepresentationPerAssignment(props) {
       ) : (
         <div>
           <img
-            className="verschuifBoek_enkel"
+            className="shiftBook_single"
             src="https://www.mupload.nl/img/3gtpo26ut9aj.jpg"
             alt="boek"
             width="400px"
