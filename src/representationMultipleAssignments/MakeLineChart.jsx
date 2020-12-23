@@ -14,7 +14,7 @@ class MakeLineChart extends React.Component {
   render() {
     let color = "#8400D3";
     let dataKey = "grade1Nice";
-
+    //console.log("data : " + this.props.dataLineChart.length);
     let lines = [];
     if (this.props.scoreChoice === "Leuk") {
       lines = this.props.assignments.map((element, index) => {
@@ -49,7 +49,13 @@ class MakeLineChart extends React.Component {
         }
         let name = "cijfer leuk opdracht " + element;
         return (
-          <Line name={name} type="monotone" dataKey={dataKey} stroke={color} />
+          <Line
+            key={index}
+            name={name}
+            type="monotone"
+            dataKey={dataKey}
+            stroke={color}
+          />
         );
       });
     } else {
@@ -85,7 +91,13 @@ class MakeLineChart extends React.Component {
         }
         let name = "cijfer moeilijk opdracht " + element;
         return (
-          <Line name={name} type="monotone" dataKey={dataKey} stroke={color} />
+          <Line
+            key={index}
+            name={name}
+            type="monotone"
+            dataKey={dataKey}
+            stroke={color}
+          />
         );
       });
     }

@@ -8,12 +8,12 @@
 
 .selectSingle {
     width: 400px;
-    font-size: 20px;
-    transform: translate(150px, 350px);
+    font-size: 15px;
+    transform: translate(250px, 200px);
 }
 
 .headerAssignments {
-    transform: translate(150px, 350px);
+    transform: translate(50px, 250px);
 }
 
 .sortScore {
@@ -22,7 +22,7 @@
 }
 
 .shiftBook_single {
-    transform: translate(200px, 300px);
+    transform: translate(200px, 250px);
 }
 
 .radio_single_pa {
@@ -30,6 +30,6 @@
 }
 
 .sortScoreMain {
-    transform: translateX(220px);
+    transform: translate(240px, 10px);
     width: 200px;
 }
