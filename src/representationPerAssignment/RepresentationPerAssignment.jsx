@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import MakeGraph from "./MakeGraph";
-import Scores from "./Scores";
 import OptionLine from "./OptionLine";
 import { Route, useHistory, Switch } from "react-router-dom";
 import "./representationPerAssignment.css";
 
 // Styles
 
-function RepresentationPerAssignment() {
+function RepresentationPerAssignment(props) {
   let history = useHistory();
 
   const [makeGraph, setMakeGraph] = useState(false);
@@ -27,7 +26,7 @@ function RepresentationPerAssignment() {
   };
 
   let Assignments = [];
-  Scores.forEach((element) => {
+  props.scores.forEach((element) => {
     if (Assignments.indexOf(element.assignment) === -1)
       Assignments.push(element.assignment);
   });
@@ -45,7 +44,7 @@ function RepresentationPerAssignment() {
       <Route key={index} path={str}>
         <MakeGraph
           assignment={element}
-          scores={Scores.filter((item) => item.assignment === assignment)}
+          scores={props.scores.filter((item) => item.assignment === assignment)}
           scoreChoice={scoreChoice}
         />
       </Route>

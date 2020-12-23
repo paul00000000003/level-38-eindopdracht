@@ -6,7 +6,7 @@ class RepresentationPerAssignmentMaster extends React.Component {
   render() {
     return (
       <BrowserRouter>
-        <RepresentationPerAssignment />
+        <RepresentationPerAssignment scores={this.props.scores} />
       </BrowserRouter>
     );
   }

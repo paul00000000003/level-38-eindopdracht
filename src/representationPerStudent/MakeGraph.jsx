@@ -12,7 +12,7 @@ class MakeGraph extends React.Component {
   render() {
     return (
       <div>
-        <h1 className="centreerNaamEnkelHistogram">{this.props.student}</h1>
+        <h1 className="centerNameSingleSHistogram">{this.props.student}</h1>
         <MakeBarchart
           scoreChoice={this.props.scoreChoice}
           scoresGraph={this.props.scoresGraph}
