@@ -1,7 +1,6 @@
 import React from "react";
 import MakeBarchart from "./MakeBarchart";
 import MakeLinechart from "./MakeLinechart";
-import { BarChart, Bar, XAxis, YAxis, Tooltip } from "recharts";
 import "./representationPerStudent.css";
 
 class MakeGraph extends React.Component {

@@ -47,60 +47,37 @@ class MakeLinechart extends React.Component {
       );
     } else {
       if (this.props.scoreChoice === "Leuk") {
-        color = "#FF0000"; //rood
+        color = "#8884d8";
         datakey = "niceGrade";
         name = "cijfer leuk student " + this.props.student;
-        return (
-          <div>
-            <LineChart
-              className="linechart"
-              width={730}
-              height={250}
-              data={this.props.scoresGraph}
-              margin={{ top: 5 }}
-            >
-              <XAxis dataKey="assignment" />
-              <YAxis />
-              <CartesianGrid strokeDasharray="3 3" />
-              <Tooltip />
-              <Legend />
-              <Line
-                name="cijfer leuk"
-                type="monotone"
-                dataKey="niceGrade"
-                stroke="#FF0000"
-              />
-            </LineChart>
-          </div>
-        );
       } else {
         color = "#FF0000"; //rood
         datakey = "difficultGrade";
         name = "cijfer moeilijk student " + this.props.student;
-        return (
-          <div>
-            <LineChart
-              className="linechart"
-              width={730}
-              height={250}
-              data={this.props.scoresGraph}
-              margin={{ top: 5 }}
-            >
-              <XAxis dataKey="assignment" />
-              <YAxis />
-              <CartesianGrid strokeDasharray="3 3" />
-              <Tooltip />
-              <Legend />
-              <Line
-                name="cijfer moeilijk"
-                type="monotone"
-                dataKey="difficultGrade"
-                stroke="#8884d8"
-              />
-            </LineChart>
-          </div>
-        );
       }
+      return (
+        <div>
+          <LineChart
+            className="linechart"
+            width={730}
+            height={250}
+            data={this.props.scoresGraph}
+            margin={{ top: 5 }}
+          >
+            <XAxis dataKey="assignment" />
+            <YAxis />
+            <CartesianGrid strokeDasharray="3 3" />
+            <Tooltip />
+            <Legend />
+            <Line
+              name={name}
+              type="monotone"
+              dataKey={datakey}
+              stroke={color}
+            />
+          </LineChart>
+        </div>
+      );
     }
   }
 }
