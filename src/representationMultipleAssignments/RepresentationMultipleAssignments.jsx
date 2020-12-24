@@ -133,7 +133,7 @@ class RepresentationMultipleAssignments extends React.Component {
     e.preventDefault();
     assignment = this.state.selectedAssignment;
     chosenAssignments = this.state.chosenAssignments;
-    if (assignment !== "") {
+    if (assignment.trim() !== "") {
       if (chosenAssignments.indexOf(assignment) === -1)
         document.getElementById("remark").textContent =
           "deze opdracht was niet geselecteerd";
