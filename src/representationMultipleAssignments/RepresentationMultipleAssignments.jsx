@@ -117,14 +117,19 @@ class RepresentationMultipleAssignments extends React.Component {
         document.getElementById("remark").textContent =
           "deze opdracht was al geselecteerd";
       else {
-        document.getElementById("remark").textContent = "";
-        chosenAssignments.push(assignment);
-        data = make_lineChart_data(chosenAssignments, this.props.scores);
-        this.setState({
-          makeLineChart: true,
-          dataLineChart: data,
-          chosenAssignments,
-        });
+        if (chosenAssignments.length === 6) {
+          document.getElementById("remark").textContent =
+            "Het maximale aantal te kiezen opdrachten is 6.";
+        } else {
+          document.getElementById("remark").textContent = "";
+          chosenAssignments.push(assignment);
+          data = make_lineChart_data(chosenAssignments, this.props.scores);
+          this.setState({
+            makeLineChart: true,
+            dataLineChart: data,
+            chosenAssignments,
+          });
+        }
       }
     }
   };
