@@ -1,6 +1,6 @@
 import React from "react";
 import MakeBarchart from "./MakeBarchart";
-import MakeLinechart from "./MakeLinechart";
+import MakeLinechart from "./MakeLineChart";
 import "./representationPerStudent.css";
 
 class MakeGraph extends React.Component {

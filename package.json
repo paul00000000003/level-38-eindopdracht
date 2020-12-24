@@ -2,7 +2,7 @@
     "name": "eindopdracht",
     "version": "0.1.0",
     "private": true,
-    "homepage": "https://paul00000000003.github.io/level-38-eindopdracht",
+    "homepage": "https://paul00000000003.github.io",
     "dependencies": {
         "@testing-library/jest-dom": "^5.11.6",
         "@testing-library/react": "^11.2.2",
