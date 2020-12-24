@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import StudentPerLinkLine from "./StudentPerLinkLine";
+import StudentPerLinkLine from "./studentPerLinkLine";
 import "./representationPerStudent.css";
-import MakeGraph from "./MakeGraph";
+import MakeGraph from "./makeGraph";
 
 let students = [];
 let assignments = [];

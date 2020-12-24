@@ -1,7 +1,7 @@
 import React from "react";
-import StudentLine from "./StudentLine";
+import StudentLine from "./studentLine";
 import "./representationMultipleStudents.css";
-import MakeLineChart from "./MakeLineChart";
+import MakeLineChart from "./makeLineChart";
 
 let students = [];
 let data = [];

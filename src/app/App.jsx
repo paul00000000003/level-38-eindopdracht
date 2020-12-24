@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Scores from "./Scores";
 import Home from "../home/Home";
-import RepresentationPerStudent from "../representationPerStudent/RepresentationPerStudent";
-import RepresentationPerAssignmentMaster from "../representationPerAssignment/RepresentationPerAssignmentMaster";
-import RepresentationMultipleStudents from "../representationMultipleStudents/RepresentationMultipleStudents";
-import RepresentationMultipleAssignments from "../representationMultipleAssignments/RepresentationMultipleAssignments";
+import RepresentationPerStudent from "../representationPerStudent/representationPerStudent";
+import RepresentationPerAssignmentMaster from "../representationPerAssignment/representationPerAssignmentMaster";
+import RepresentationMultipleStudents from "../representationMultipleStudents/representationMultipleStudents";
+import RepresentationMultipleAssignments from "../representationMultipleAssignments/representationMultipleAssignments";
 import "./App.css";
 
 class App extends Component {
@@ -42,7 +42,7 @@ class App extends Component {
                 <li className="li-nav">
                   {" "}
                   <Link className="link" to={"./RepresentationPerStudent"}>
-                    per student
+                    Per student
                   </Link>
                 </li>
                 <li className="li-nav">
@@ -50,13 +50,13 @@ class App extends Component {
                     className="link"
                     to={"./representationMultipleStudents"}
                   >
-                    meerdere studenten
+                    Meerdere studenten
                   </Link>
                 </li>
                 <li className="li-nav">
                   {" "}
                   <Link className="link" to={"./representationPerAssignment"}>
-                    per opdracht
+                    Per opdracht
                   </Link>
                 </li>
                 <li className="li-nav">
@@ -64,7 +64,7 @@ class App extends Component {
                     className="link"
                     to={"./representationMultipleAssignments"}
                   >
-                    meerdere opdrachten
+                    Meerdere opdrachten
                   </Link>
                 </li>
               </ul>

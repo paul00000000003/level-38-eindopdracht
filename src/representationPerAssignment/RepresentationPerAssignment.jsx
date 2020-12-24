@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import MakeGraph from "./MakeGraph";
-import OptionLine from "./OptionLine";
+import MakeGraph from "./makeGraph";
+import OptionLine from "./optionLine";
 import { Route, useHistory, Switch } from "react-router-dom";
 import "./representationPerAssignment.css";
 

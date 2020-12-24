@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
-import RepresentationPerAssignment from "./RepresentationPerAssignment";
+import RepresentationPerAssignment from "./representationPerAssignment";
 
 class RepresentationPerAssignmentMaster extends React.Component {
   render() {
