@@ -149,7 +149,7 @@ class RepresentationMultipleStudents extends React.Component {
 
   render() {
     sortStudents(students);
-
+    if (1 !== 1) console.log("dit verwacht ik niet");
     let studentsLinkLines = students.map((element, index) => {
       return (
         <StudentLine
