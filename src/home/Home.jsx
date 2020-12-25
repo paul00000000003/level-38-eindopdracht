@@ -34,29 +34,15 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
-    let niceGradesTotals = {};
-    let difficultGradesTotals = {};
-    let numberOfGrades = {};
+    let gradesTotals = [];
     let scoresAverage = [];
     let assignments = [];
+    let positionAssignment;
 
     this.props.scores.forEach((element) => {
-      if (!assignments.includes(element.assignment)) {
+      if (!assignments.includes(element.assignment))
         assignments.push(element.assignment);
-        niceGradesTotals[element.assignment] = element.niceGrade;
-        difficultGradesTotals[element.assignment] = element.difficultGrade;
-        numberOfGrades[element.assignment] = 1;
-        assignments.push(element.assignment);
-      } else {
-        niceGradesTotals[element.assignment] =
-          niceGradesTotals[element.assignment] + element.niceGrade;
-        difficultGradesTotals[element.assignment] =
-          difficultGradesTotals[element.assignment] + element.difficultGrade;
-        numberOfGrades[element.assignment] =
-          numberOfGrades[element.assignment] + 1;
-      }
     });
-
     assignments.sort(function (a, b) {
       let element1 = a;
       let element2 = b;
@@ -69,16 +55,30 @@ class Home extends React.Component {
       return 0;
     });
 
-    assignments.forEach((element) => {
-      let totnumber = numberOfGrades[element];
-      let niceGradeAvg = niceGradesTotals[element] / totnumber;
-      let difficultGradeAvg = difficultGradesTotals[element] / totnumber;
+    assignments.forEach((element, index) => {
+      const assignmentobj = { assignment: element };
+      gradesTotals.push(assignmentobj);
+      gradesTotals[index]["number"] = 0;
+      gradesTotals[index]["niceGradeTotal"] = 0;
+      gradesTotals[index]["difficultGradeTotal"] = 0;
+    });
+
+    this.props.scores.forEach((element) => {
+      positionAssignment = assignments.indexOf(element.assignment);
+      gradesTotals[positionAssignment]["niceGradeTotal"] += element.niceGrade;
+      gradesTotals[positionAssignment]["difficultGradeTotal"] +=
+        element.difficultGrade;
+      gradesTotals[positionAssignment]["number"] += 1;
+    });
+
+    gradesTotals.forEach((element) => {
       scoresAverage.push({
-        assignment: element,
-        niceGrade: niceGradeAvg,
-        difficultGrade: difficultGradeAvg,
+        assignment: element.assignment,
+        niceGrade: element.niceGradeTotal / element.number,
+        difficultGrade: element.difficultGradeTotal / element.number,
       });
     });
+
     this.setState({ scoresAverage: scoresAverage, schermGeladen: true });
   }
 
