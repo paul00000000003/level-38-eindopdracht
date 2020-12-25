@@ -73,11 +73,19 @@ class Home extends React.Component {
       gradesTotals[positionAssignment]["number"] += 1;
     });
 
+    let niceGradeAvg;
+    let difficultGradeAvg;
     gradesTotals.forEach((element) => {
+      if (element.niceGradeTotal !== 0 && element.number !== 0)
+        niceGradeAvg = element.niceGradeTotal / element.number;
+      else niceGradeAvg = 0;
+      if (element.difficultGradeTotal !== 0 && element.number !== 0)
+        difficultGradeAvg = element.difficultGradeTotal / element.number;
+      else difficultGradeAvg = 0;
       scoresAverage.push({
         assignment: element.assignment,
-        niceGrade: element.niceGradeTotal / element.number,
-        difficultGrade: element.difficultGradeTotal / element.number,
+        niceGrade: niceGradeAvg,
+        difficultGrade: difficultGradeAvg,
       });
     });
 
