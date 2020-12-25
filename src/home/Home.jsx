@@ -55,12 +55,14 @@ class Home extends React.Component {
       return 0;
     });
 
-    assignments.forEach((element, index) => {
-      const assignmentobj = { assignment: element };
+    assignments.forEach((assignment, index) => {
+      const assignmentobj = {
+        assignment,
+        number: 0,
+        niceGradeTotal: 0,
+        difficultGradeTotal: 0,
+      };
       gradesTotals.push(assignmentobj);
-      gradesTotals[index]["number"] = 0;
-      gradesTotals[index]["niceGradeTotal"] = 0;
-      gradesTotals[index]["difficultGradeTotal"] = 0;
     });
 
     this.props.scores.forEach((element) => {
