@@ -1,7 +1,7 @@
-let Scores = [];
+let scores = [];
 
 const addPersoonlijkeScore = (student, assignment, difficultGrade, niceGrade) =>
-  Scores.push({
+  scores.push({
     student: student,
     assignment: assignment,
     difficultGrade: difficultGrade,
@@ -569,4 +569,4 @@ addPersoonlijkeScore("Storm", "W6D1-1", 4, 4);
 addPersoonlijkeScore("Storm", "W6D2-1", 1, 1);
 addPersoonlijkeScore("Storm", "W6D2 - Project - Eindopdracht", 3, 3);
 
-export default Scores;
+export default scores;

@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import Scores from "./Scores";
-import Home from "../home/Home";
-import RepresentationPerStudent from "../representationPerStudent/representationPerStudent";
-import RepresentationPerAssignmentMaster from "../representationPerAssignment/representationPerAssignmentMaster";
-import RepresentationMultipleStudents from "../representationMultipleStudents/representationMultipleStudents";
-import RepresentationMultipleAssignments from "../representationMultipleAssignments/representationMultipleAssignments";
+import scores from "./scores";
+import Home from "../home/home";
+import RepresentationPerStudent from "../representation-per-student/representationPerStudent";
+import RepresentationPerAssignmentMaster from "../representation-per-assignment/representationPerAssignmentMaster";
+import RepresentationMultipleStudents from "../representation-multiple-students/representationMultipleStudents";
+import RepresentationMultipleAssignments from "../representation-multiple-assignments/representationMultipleAssignments";
 import "./App.css";
 
 class App extends Component {
@@ -15,7 +15,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.setState({ scores: Scores, schermGeladen: true });
+    this.setState({ scores, schermGeladen: true });
   }
 
   render() {
@@ -41,28 +41,28 @@ class App extends Component {
                 </li>
                 <li className="li-nav">
                   {" "}
-                  <Link className="link" to={"./RepresentationPerStudent"}>
+                  <Link className="link" to={"./representation-per-student"}>
                     Per student
                   </Link>
                 </li>
                 <li className="li-nav">
                   <Link
                     className="link"
-                    to={"./representationMultipleStudents"}
+                    to={"./representation-multiple-students"}
                   >
                     Meerdere studenten
                   </Link>
                 </li>
                 <li className="li-nav">
                   {" "}
-                  <Link className="link" to={"./representationPerAssignment"}>
+                  <Link className="link" to={"./representation-per-assignment"}>
                     Per opdracht
                   </Link>
                 </li>
                 <li className="li-nav">
                   <Link
                     className="link"
-                    to={"./representationMultipleAssignments"}
+                    to={"./representation-multiple-assignments"}
                   >
                     Meerdere opdrachten
                   </Link>
@@ -75,16 +75,16 @@ class App extends Component {
             <Route exact path="/">
               <Home scores={this.state.scores} />
             </Route>
-            <Route path="/RepresentationPerStudent">
+            <Route path="/representation-per-student">
               <RepresentationPerStudent scores={this.state.scores} />
             </Route>
-            <Route path="/representationMultipleStudents">
+            <Route path="/representation-multiple-students">
               <RepresentationMultipleStudents scores={this.state.scores} />
             </Route>
-            <Route path="/representationPerAssignment">
+            <Route path="/representation-per-assignment">
               <RepresentationPerAssignmentMaster scores={this.state.scores} />
             </Route>
-            <Route path="/representationMultipleAssignments">
+            <Route path="/representation-multiple-assignments">
               <RepresentationMultipleAssignments scores={this.state.scores} />
             </Route>
           </Switch>
