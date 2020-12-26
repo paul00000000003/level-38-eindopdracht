@@ -22,7 +22,7 @@ addPersoonlijkeScore("Evelyn", "W1D3-5", 4, 4);
 addPersoonlijkeScore("Evelyn", "W1D3 - Project - Guess-the-number", 5, 5);
 addPersoonlijkeScore("Evelyn", "W1D4-1", 4, 5);
 addPersoonlijkeScore("Evelyn", "W1D4 - Project - Kleurentoggle", 3, 4);
-addPersoonlijkeScore("Evelyn", "W1D5 - Project - Galgje	3", 3);
+addPersoonlijkeScore("Evelyn", "W1D5 - Project - Galgje", 3, 3);
 addPersoonlijkeScore("Evelyn", "W2D1-1", 1, 5);
 addPersoonlijkeScore("Evelyn", "W2D1-2", 2, 5);
 addPersoonlijkeScore("Evelyn", "W2D2-1", 3, 4);
