@@ -5,7 +5,7 @@ class MakeBarChart extends React.Component {
   render() {
     let barChartColumnChoice = [];
     switch (this.props.scoreChoice) {
-      case "Beide":
+      case "Both":
         barChartColumnChoice = [
           <Bar
             key={1}
@@ -16,7 +16,7 @@ class MakeBarChart extends React.Component {
           <Bar key={2} name="cijfer leuk" dataKey="niceGrade" fill="#98FF98" />,
         ];
         break;
-      case "Moeilijk":
+      case "Difficult":
         barChartColumnChoice = [
           <Bar
             key={3}
@@ -26,7 +26,7 @@ class MakeBarChart extends React.Component {
           />,
         ];
         break;
-      case "Leuk":
+      case "Nice":
         barChartColumnChoice = [
           <Bar key={4} name="cijfer leuk" dataKey="niceGrade" fill="#98FF98" />,
         ];

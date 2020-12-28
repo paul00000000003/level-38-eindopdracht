@@ -10,9 +10,7 @@ let outputselection = [];
 let chosenStudents = [];
 
 const sortStudents = (students) =>
-  students.sort(function (a, b) {
-    let student1 = a;
-    let student2 = b;
+  students.sort(function (student1, student2) {
     if (student1 < student2) {
       return -1;
     }
@@ -25,10 +23,10 @@ const sortStudents = (students) =>
 const filterScores = (scores) => {
   students = [];
   assignments = [];
-  scores.forEach((element) => {
-    if (!students.includes(element.student)) students.push(element.student);
-    if (!assignments.includes(element.assignment))
-      assignments.push(element.assignment);
+  scores.forEach((score) => {
+    if (!students.includes(score.student)) students.push(score.student);
+    if (!assignments.includes(score.assignment))
+      assignments.push(score.assignment);
   });
   return [students, assignments];
 };
@@ -40,40 +38,40 @@ const make_lineChart_data = (chosenStudents, assignments, scores) => {
     dataLineChart.push(item);
   });
 
-  scores.forEach((element) => {
-    let spotStudent = chosenStudents.indexOf(element.student);
+  scores.forEach((score) => {
+    let spotStudent = chosenStudents.indexOf(score.student);
     if (spotStudent > -1 && spotStudent < 6) {
-      let spotAssignment = assignments.indexOf(element.assignment);
+      let spotAssignment = assignments.indexOf(score.assignment);
       switch (spotStudent) {
         case 0:
           dataLineChart[spotAssignment]["grade1Difficult"] =
-            element.difficultGrade;
-          dataLineChart[spotAssignment]["grade1Nice"] = element.niceGrade;
+            score.difficultGrade;
+          dataLineChart[spotAssignment]["grade1Nice"] = score.niceGrade;
           break;
         case 1:
           dataLineChart[spotAssignment]["grade2Difficult"] =
-            element.difficultGrade;
-          dataLineChart[spotAssignment]["grade2Nice"] = element.niceGrade;
+            score.difficultGrade;
+          dataLineChart[spotAssignment]["grade2Nice"] = score.niceGrade;
           break;
         case 2:
           dataLineChart[spotAssignment]["grade3Difficult"] =
-            element.difficultGrade;
-          dataLineChart[spotAssignment]["grade3Nice"] = element.niceGrade;
+            score.difficultGrade;
+          dataLineChart[spotAssignment]["grade3Nice"] = score.niceGrade;
           break;
         case 3:
           dataLineChart[spotAssignment]["grade4Difficult"] =
-            element.difficultGrade;
-          dataLineChart[spotAssignment]["grade4Nice"] = element.niceGrade;
+            score.difficultGrade;
+          dataLineChart[spotAssignment]["grade4Nice"] = score.niceGrade;
           break;
         case 4:
           dataLineChart[spotAssignment]["grade5Difficult"] =
-            element.difficultGrade;
-          dataLineChart[spotAssignment]["grade5Nice"] = element.niceGrade;
+            score.difficultGrade;
+          dataLineChart[spotAssignment]["grade5Nice"] = score.niceGrade;
           break;
         case 5:
           dataLineChart[spotAssignment]["grade6Difficult"] =
-            element.difficultGrade;
-          dataLineChart[spotAssignment]["grade6Nice"] = element.niceGrade;
+            score.difficultGrade;
+          dataLineChart[spotAssignment]["grade6Nice"] = score.niceGrade;
           break;
         default:
           console.log("onverwacht");
@@ -89,7 +87,7 @@ class RepresentationMultipleStudents extends React.Component {
     this.state = {
       scoresHistogram: [],
       scores: [],
-      scoreChoice: "Leuk",
+      scoreChoice: "Nice",
       student: "",
       makeHistogram: false,
       lineChartOk: false,
@@ -107,8 +105,8 @@ class RepresentationMultipleStudents extends React.Component {
       } else chosenStudents.push(this.state.students[index]);
     } else {
       let index2 = -1;
-      chosenStudents.forEach((element, index3) => {
-        if (element === this.state.students[index]) index2 = index3;
+      chosenStudents.forEach((student, index3) => {
+        if (student === this.state.students[index]) index2 = index3;
       });
       if (index2 !== -1) chosenStudents.splice(index2, 1);
     }
@@ -149,11 +147,10 @@ class RepresentationMultipleStudents extends React.Component {
 
   render() {
     sortStudents(students);
-    if (1 !== 1) console.log("dit verwacht ik niet");
-    let studentsLinkLines = students.map((element, index) => {
+    let studentsLinkLines = students.map((student, index) => {
       return (
         <StudentLine
-          name={element}
+          name={student}
           key={index}
           handleChange={this.handleChange}
           index={index}

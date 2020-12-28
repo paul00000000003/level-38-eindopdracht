@@ -1,5 +1,5 @@
 import React from "react";
-import "./makeLineChartMultipleStudents.css";
+import "./representationMultipleStudents.css";
 import {
   LineChart,
   Line,
@@ -11,12 +11,12 @@ import {
 } from "recharts";
 
 class MakeLineChart extends React.Component {
-  state = { scoreChoice: "Leuk" };
+  state = { scoreChoice: "Nice" };
 
-  scoreKeuzeHandle = () => {
-    if (this.state.scoreChoice === "Leuk")
-      this.setState({ scoreChoice: "Moeilijk" });
-    else this.setState({ scoreChoice: "Leuk" });
+  handleScoreChoice = () => {
+    if (this.state.scoreChoice === "Nice")
+      this.setState({ scoreChoice: "Difficult" });
+    else this.setState({ scoreChoice: "Nice" });
   };
 
   render() {
@@ -24,7 +24,7 @@ class MakeLineChart extends React.Component {
     let dataKey = "cijfer1Leuk";
     let name_label;
     let lines = [];
-    if (this.state.scoreChoice === "Leuk") {
+    if (this.state.scoreChoice === "Nice") {
       lines = this.props.students.map((element, index) => {
         switch (index) {
           case 0:
@@ -53,7 +53,7 @@ class MakeLineChart extends React.Component {
             break;
           default:
             color = "#FF0000"; //paars
-            dataKey = "grad1Nice";
+            dataKey = "grade1Nice";
         }
         name_label = "cijfer leuk student " + element;
         return (
@@ -98,7 +98,6 @@ class MakeLineChart extends React.Component {
             dataKey = "grade1Difficult";
         }
         name_label = "cijfer moeilijk student " + element;
-        console.log(name_label);
         return (
           <Line
             name={name_label}
@@ -119,7 +118,7 @@ class MakeLineChart extends React.Component {
             type="radio"
             name="scoreChoice"
             value="Moeilijk"
-            onChange={this.scoreKeuzeHandle}
+            onChange={this.handleScoreChoice}
           />
           <p>Leuk</p>
           <input
@@ -127,7 +126,7 @@ class MakeLineChart extends React.Component {
             type="radio"
             name="scoreChoice"
             value="Leuk"
-            onChange={this.scoreKeuzeHandle}
+            onChange={this.handleScoreChoice}
             defaultChecked
           />
         </form>

@@ -10,9 +10,7 @@ let data = [];
 let chosenAssignments = [];
 
 const sortStudents = (students) =>
-  students.sort(function (a, b) {
-    let student1 = a;
-    let student2 = b;
+  students.sort(function (student1, student2) {
     if (student1 < student2) {
       return -1;
     }
@@ -31,40 +29,34 @@ const make_lineChart_data = (assign, scores) => {
     dataLineChart.push(item);
   });
 
-  scores.forEach((element) => {
-    let spotAssign = chosenAssignments.indexOf(element.assignment);
+  scores.forEach((score) => {
+    let spotAssign = chosenAssignments.indexOf(score.assignment);
     if (spotAssign > -1 && spotAssign < 6) {
-      let spotStudent = students.indexOf(element.student);
+      let spotStudent = students.indexOf(score.student);
       switch (spotAssign) {
         case 0:
-          dataLineChart[spotStudent]["grade1Difficult"] =
-            element.difficultGrade;
-          dataLineChart[spotStudent]["grade1Nice"] = element.niceGrade;
+          dataLineChart[spotStudent]["grade1Difficult"] = score.difficultGrade;
+          dataLineChart[spotStudent]["grade1Nice"] = score.niceGrade;
           break;
         case 1:
-          dataLineChart[spotStudent]["grade2Difficult"] =
-            element.difficultGrade;
-          dataLineChart[spotStudent]["grade2Nice"] = element.niceGrade;
+          dataLineChart[spotStudent]["grade2Difficult"] = score.difficultGrade;
+          dataLineChart[spotStudent]["grade2Nice"] = score.niceGrade;
           break;
         case 2:
-          dataLineChart[spotStudent]["grade3Difficult"] =
-            element.difficultGrade;
-          dataLineChart[spotStudent]["grade3Nice"] = element.niceGrade;
+          dataLineChart[spotStudent]["grade3Difficult"] = score.difficultGrade;
+          dataLineChart[spotStudent]["grade3Nice"] = score.niceGrade;
           break;
         case 3:
-          dataLineChart[spotStudent]["grade4Difficult"] =
-            element.difficultGrade;
-          dataLineChart[spotStudent]["grade4Nice"] = element.niceGrade;
+          dataLineChart[spotStudent]["grade4Difficult"] = score.difficultGrade;
+          dataLineChart[spotStudent]["grade4Nice"] = score.niceGrade;
           break;
         case 4:
-          dataLineChart[spotStudent]["grade5Difficult"] =
-            element.difficultGrade;
-          dataLineChart[spotStudent]["grade5Nice"] = element.niceGrade;
+          dataLineChart[spotStudent]["grade5Difficult"] = score.difficultGrade;
+          dataLineChart[spotStudent]["grade5Nice"] = score.niceGrade;
           break;
         case 5:
-          dataLineChart[spotStudent]["grade6Difficult"] =
-            element.difficultGrade;
-          dataLineChart[spotStudent]["grade6Nice"] = element.niceGrade;
+          dataLineChart[spotStudent]["grade6Difficult"] = score.difficultGrade;
+          dataLineChart[spotStudent]["grade6Nice"] = score.niceGrade;
           break;
         default:
           console.log("onverwacht");
@@ -92,7 +84,7 @@ class RepresentationMultipleAssignments extends React.Component {
       students: [],
       dataLineChart: [],
       assignments: [],
-      scoreChoice: "Leuk",
+      scoreChoice: "Nice",
       scores: [],
       makeLineChart: false,
       makeHistogram: false,
@@ -202,7 +194,7 @@ class RepresentationMultipleAssignments extends React.Component {
               className="radio_score_multass"
               type="radio"
               name="scoreChoice"
-              value="Moeilijk"
+              value="Difficult"
               onChange={this.scoreChoiceHandle}
             />
             <p className="sortScoreLabel">Leuk</p>
@@ -210,7 +202,7 @@ class RepresentationMultipleAssignments extends React.Component {
               className="radio_score_multass"
               type="radio"
               name="scoreChoice"
-              value="Leuk"
+              value="Nice"
               onChange={this.scoreChoiceHandle}
               defaultChecked
             />
@@ -229,13 +221,13 @@ class RepresentationMultipleAssignments extends React.Component {
                 {assignmentLinks}
               </select>
               <button
-                className="selectButtonToevoegen"
+                className="selectButtonAdd"
                 onClick={this.selectMultipleAdd}
               >
                 Toevoegen
               </button>
               <button
-                className="selectButtonVerwijderen"
+                className="selectButtonRemove"
                 onClick={this.selectMultipleRemove}
               >
                 Verwijderen

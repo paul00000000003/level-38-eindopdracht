@@ -13,7 +13,7 @@ class MakeLineChart extends React.Component {
   render() {
     let lines;
     switch (this.props.scoreChoice) {
-      case "Beide":
+      case "Both":
         lines = [
           <Line
             key="1"
@@ -31,7 +31,7 @@ class MakeLineChart extends React.Component {
           />,
         ];
         break;
-      case "Leuk":
+      case "Nice":
         lines = [
           <Line
             key="1"
@@ -42,7 +42,7 @@ class MakeLineChart extends React.Component {
           />,
         ];
         break;
-      case "Moeilijk":
+      case "Difficult":
         lines = [
           <Line
             key="1"

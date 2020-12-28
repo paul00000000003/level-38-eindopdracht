@@ -4,13 +4,11 @@ import OptionLine from "./optionLine";
 import { Route, useHistory, Switch } from "react-router-dom";
 import "./representationPerAssignment.css";
 
-// Styles
-
 function RepresentationPerAssignment(props) {
   let history = useHistory();
 
   const [makeGraph, setMakeGraph] = useState(false);
-  const [scoreChoice, setScoreChoice] = useState("Beide");
+  const [scoreChoice, setScoreChoice] = useState("Both");
 
   const handleChange = (e) => {
     let reference;
@@ -68,7 +66,7 @@ function RepresentationPerAssignment(props) {
             className="radio_single_pa"
             type="radio"
             name="scoreChoice"
-            value="Beide"
+            value="Both"
             onChange={scoreChoiceHandle}
             defaultChecked
           />
@@ -80,7 +78,7 @@ function RepresentationPerAssignment(props) {
             className="radio_single_pa"
             type="radio"
             name="scoreChoice"
-            value="Moeilijk"
+            value="Difficult"
             onChange={scoreChoiceHandle}
           />
         </div>
@@ -90,7 +88,7 @@ function RepresentationPerAssignment(props) {
             className="radio_single_pa"
             type="radio"
             name="scoreChoice"
-            value="Leuk"
+            value="Nice"
             onChange={scoreChoiceHandle}
           />
         </div>

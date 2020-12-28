@@ -24,10 +24,10 @@ const sortStudents = (students) =>
 const filterScores = (scores) => {
   students = [];
   assignments = [];
-  scores.forEach((element) => {
-    if (!students.includes(element.student)) students.push(element.student);
-    if (!assignments.includes(element.assignment))
-      assignments.push(element.assignment);
+  scores.forEach((score) => {
+    if (!students.includes(score.student)) students.push(score.student);
+    if (!assignments.includes(score.assignment))
+      assignments.push(score.assignment);
   });
   return [students, assignments];
 };
@@ -38,7 +38,7 @@ class RepresentationPerStudent extends React.Component {
     this.state = {
       scoresHistogram: [],
       scores: [],
-      scoreChoice: "Beide",
+      scoreChoice: "Both",
       student: "",
       makeHistogram: false,
     };
@@ -50,7 +50,7 @@ class RepresentationPerStudent extends React.Component {
     this.setState({ scoreChoice: e.target.value, makeHistogram: true });
   }
 
-  makegraph(index, link, student) {
+  makegraph(link, student) {
     let links = Array.from(document.getElementsByClassName("linkClass"));
     links.forEach((element) => {
       if (element.classList.contains("makebold"))
@@ -95,8 +95,8 @@ class RepresentationPerStudent extends React.Component {
     });
 
     let studentsRoutes = students.map((element, index) => {
-      let str = "/" + element.toLowerCase();
       let student = element;
+      let str = "/" + student.toLowerCase();
       return (
         <Route key={index} path={str}>
           <MakeGraph
@@ -125,7 +125,7 @@ class RepresentationPerStudent extends React.Component {
                 className="dashScoreSS"
                 type="radio"
                 name="scoreChoice"
-                value="Beide"
+                value="Both"
                 onChange={this.scoreChoiceHandle}
                 defaultChecked
               />
@@ -136,7 +136,7 @@ class RepresentationPerStudent extends React.Component {
                 className="dashScoreSS"
                 type="radio"
                 name="scoreChoice"
-                value="Moeilijk"
+                value="Difficult"
                 onChange={this.scoreChoiceHandle}
               />
             </div>
@@ -146,7 +146,7 @@ class RepresentationPerStudent extends React.Component {
                 className="dashScoreSS"
                 type="radio"
                 name="scoreChoice"
-                value="Leuk"
+                value="Nice"
                 onChange={this.scoreChoiceHandle}
               />
             </div>

@@ -1,112 +1,80 @@
-                    .opdrachtenDisplay {
-                        display: grid;
-                        grid-template-columns: repeat(5, 1fr);
-                        grid-template-rows: repeat(5, 1fr);
-                    }
-                    
-                    .vinkjes {
-                        list-style-type: none;
-                    }
-                    
-                    .ullijstje {
-                        display: grid;
-                        grid-template-columns: repeat(5, 1fr);
-                        grid-template-rows: repeat(5, 1fr);
-                    }
-                    
-                    .maakbold {
-                        font-weight: bold;
-                    }
-                    
-                    .linkklas {
-                        color: black;
-                    }
-                    
-                    .soortscore {
-                        width: 100px;
-                    }
-                    
-                    .regel {
-                        display: flex;
-                    }
-                    
-                    .assignmentPrint {
-                        width: 175px;
-                        height: 0.8em;
-                    }
-                    
-                    .assignmentInput {
-                        height: 0.8em;
-                    }
-                    
-                    .multipleAssignmentLines {
-                        width: 700px;
-                        height: 60px;
-                    }
-                    
-                    .headingMultipleAssignments {
-                        width: 100%;
-                        text-align: center;
-                    }
-                    
-                    .heading {
-                        display: flex
-                    }
-                    
-                    .displayContainers {
-                        display: flex;
-                    }
-                    
-                    .shift_multipleBooks {
-                        transform: translate(150px, 200px);
-                    }
-                    
-                    .shift_multipleBooks2 {
-                        transform: translate(200px, 200px);
-                    }
-                    
-                    .multipleAssignmentsSelect {
-                        transform: translate(10px, 35px);
-                    }
-                    
-                    .selectButtonToevoegen {
-                        transform: translate(20px, 35px)
-                    }
-                    
-                    .selectButtonVerwijderen {
-                        transform: translate(30px, 35px)
-                    }
-                    
-                    #remark {
-                        width: 400px;
-                        transform: translateY(60px);
-                    }
-                    
-                    .assignmentLabel {
-                        transform: translate(50px, 200px);
-                    }
-                    
-                    #selectContainer {
-                        transform: translate(100px, 200px);
-                    }
-                    
-                    #sortScoreSpot {
-                        display: flex;
-                        font-size: 20px;
-                    }
-                    
-                    .radio_score_multass {
-                        transform: translate(-250px, 25px);
-                    }
-                    
-                    .sortScoreLabel {
-                        transform: translateX(-210px);
-                    }
-                    
-                    .positionChart {
-                        transform: translateY(80px);
-                    }
-                    
-                    .radioButtons_multipleStudents {
-                        display: flex;
-                    }
+                .assignmentPrint {
+                    width: 175px;
+                    height: 0.8em;
+                }
+                
+                .assignmentInput {
+                    height: 0.8em;
+                }
+                
+                .multipleAssignmentLines {
+                    width: 700px;
+                    height: 60px;
+                }
+                
+                .headingMultipleAssignments {
+                    width: 100%;
+                    text-align: center;
+                }
+                
+                .heading {
+                    display: flex
+                }
+                
+                .displayContainers {
+                    display: flex;
+                }
+                
+                .shift_multipleBooks {
+                    transform: translate(150px, 200px);
+                }
+                
+                .shift_multipleBooks2 {
+                    transform: translate(200px, 200px);
+                }
+                
+                .multipleAssignmentsSelect {
+                    transform: translate(10px, 35px);
+                }
+                
+                .selectButtonAdd {
+                    transform: translate(20px, 35px)
+                }
+                
+                .selectButtonRemove {
+                    transform: translate(30px, 35px)
+                }
+                
+                #remark {
+                    width: 400px;
+                    transform: translateY(60px);
+                }
+                
+                .assignmentLabel {
+                    transform: translate(50px, 200px);
+                }
+                
+                #selectContainer {
+                    transform: translate(100px, 200px);
+                }
+                
+                #sortScoreSpot {
+                    display: flex;
+                    font-size: 20px;
+                }
+                
+                .radio_score_multass {
+                    transform: translate(-250px, 25px);
+                }
+                
+                .sortScoreLabel {
+                    transform: translateX(-210px);
+                }
+                
+                .positionChart {
+                    transform: translateY(80px);
+                }
+                
+                .radioButtons_multipleStudents {
+                    display: flex;
+                }

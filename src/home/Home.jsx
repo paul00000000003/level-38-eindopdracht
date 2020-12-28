@@ -11,12 +11,11 @@ import {
   Tooltip,
 } from "recharts";
 
-class Home extends React.Component {
+class home extends React.Component {
   constructor() {
     super();
     this.state = {
-      scoresGemiddeld: [],
-      schermGeladen: false,
+      scoresAverage: [],
       makeHistogram: true,
       makeLineChart: false,
     };
@@ -43,19 +42,17 @@ class Home extends React.Component {
       if (!assignments.includes(element.assignment))
         assignments.push(element.assignment);
     });
-    assignments.sort(function (a, b) {
-      let element1 = a;
-      let element2 = b;
-      if (element1 < element2) {
+    assignments.sort(function (assignment1, assignment2) {
+      if (assignment1 < assignment2) {
         return -1;
       }
-      if (element1 > element2) {
+      if (assignment1 > assignment2) {
         return 1;
       }
       return 0;
     });
 
-    assignments.forEach((assignment, index) => {
+    assignments.forEach((assignment) => {
       const assignmentobj = {
         assignment,
         number: 0,
@@ -100,8 +97,7 @@ class Home extends React.Component {
           <label>Maak linechart</label>
           <input
             type="radio"
-            className="outputkeuze"
-            name="outputkeuze"
+            name="outputChoice"
             value={this.state.makeLineChart}
             onChange={this.make_linechart}
           />
@@ -109,8 +105,7 @@ class Home extends React.Component {
           <input
             id="histo"
             type="radio"
-            className="outputkeuze"
-            name="outputkeuze"
+            name="outputChoice"
             value={this.state.makeHistogram}
             onChange={this.make_histogram}
             defaultChecked
@@ -158,4 +153,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+export default home;

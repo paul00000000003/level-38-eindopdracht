@@ -11,9 +11,7 @@ class StudentPerLinkRegel extends React.Component {
           className="linkklas"
           style={{ color: "white" }}
           to={this.props.str}
-          onClick={(e) =>
-            this.props.makegraph(this.props.index, e.target, this.props.el)
-          }
+          onClick={(e) => this.props.makegraph(e.target, this.props.el)}
         >
           {this.props.el}
         </Link>

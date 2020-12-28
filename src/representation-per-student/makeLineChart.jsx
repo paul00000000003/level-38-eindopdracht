@@ -15,7 +15,7 @@ class MakeLinechart extends React.Component {
     let color = "#8400D3";
     let dataKey = "cijfer1Leuk";
     let name = "";
-    if (this.props.scoreChoice === "Beide") {
+    if (this.props.scoreChoice === "Both") {
       return (
         <div>
           <LineChart
@@ -46,7 +46,7 @@ class MakeLinechart extends React.Component {
         </div>
       );
     } else {
-      if (this.props.scoreChoice === "Leuk") {
+      if (this.props.scoreChoice === "Nice") {
         color = "#8884d8";
         dataKey = "niceGrade";
         name = "cijfer leuk student " + this.props.student;
