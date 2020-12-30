@@ -26,7 +26,7 @@ const addScore = (score) => {
 class App extends Component {
   constructor() {
     super();
-    this.state = { scores: [], schermGeladen: false };
+    this.state = { scores: [], dataLoaded: false };
   }
 
   componentDidMount() {
@@ -35,26 +35,26 @@ class App extends Component {
       .then((scoresData) => {
         const scoreLines = scoresData.split("\n");
         scoreLines.forEach((score) => addScore(score));
-        this.setState({ scores, schermGeladen: true });
+        this.setState({ scores, dataLoaded: true });
       });
   }
 
   render() {
-    if (this.state.schermGeladen) {
+    if (this.state.dataLoaded) {
       return (
         <Router>
           <nav>
-            <h1 id="hoofdtitel">
-              <p id="titel_woord1">R e s u l t a t e n</p>
-              <p className="titel_spatiering"> </p>
-              <p id="titel_woord2">L e u k</p>
-              <p className="titel_spatiering"></p>
-              <p id="titel_woord3">e n</p>
-              <p className="titel_spatiering"></p>
-              <p id="titel_woord4">M o e i l i j k</p>
+            <h1 id="mainTitle">
+              <p id="title_word1">R e s u l t a t e n</p>
+              <p className="title_spacing"> </p>
+              <p id="title_word2">L e u k</p>
+              <p className="title_spacing"></p>
+              <p id="title_word3">e n</p>
+              <p className="title_spacing"></p>
+              <p id="title_word4">M o e i l i j k</p>
             </h1>
             <div>
-              <ul className="scoremogelijkheden">
+              <ul className="scorePossibilities">
                 <li className="li-nav">
                   <Link className="link nav-link" to="./">
                     Home

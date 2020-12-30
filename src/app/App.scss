@@ -1,35 +1,35 @@
 $color: purple;
-#hoofdtitel {
+#mainTitle {
     width: 800px;
     margin: auto;
     display: flex;
 }
 
-#titel_woord1 {
+#title_word1 {
     font-size: 30px;
     width: 300px;
     color: $color;
 }
 
-#titel_woord2 {
+#title_word2 {
     font-size: 30px;
     width: 150px;
     color: $color;
 }
 
-#titel_woord3 {
+#title_word3 {
     font-size: 30px;
     width: 80px;
     color: $color;
 }
 
-#titel_woord4 {
+#title_word4 {
     font-size: 30px;
     width: 220px;
     color: $color;
 }
 
-.titel_spatiering {
+.title_spacing {
     width: 50px;
 }
 
@@ -48,7 +48,7 @@ $color: purple;
     color: orange;
 }
 
-.scoremogelijkheden {
+.scorePossibilities {
     display: flex;
     justify-content: space-around;
 }
