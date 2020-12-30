@@ -37,6 +37,7 @@ class home extends React.Component {
     let scoresAverage = [];
     let assignments = [];
     let positionAssignment;
+    console.log("binnen home : " + this.props.scores.length);
 
     this.props.scores.forEach((element) => {
       if (!assignments.includes(element.assignment))

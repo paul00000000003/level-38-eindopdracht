@@ -1,12 +1,36 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import scores from "./scores";
 import Home from "../home/Home";
 import RepresentationPerStudent from "../representation-per-student/representationPerStudent";
 import RepresentationPerAssignmentMaster from "../representation-per-assignment/representationPerAssignmentMaster";
 import RepresentationMultipleStudents from "../representation-multiple-students/representationMultipleStudents";
 import RepresentationMultipleAssignments from "../representation-multiple-assignments/representationMultipleAssignments";
 import "./App.css";
+
+/*
+async function scoresFetch(scores) {
+  try {
+    const response = await 
+    const scoresData = await response.text();
+    await console.log(scoresData);
+    const scoreLines = scoresData.split("\n");
+    console.log("aantal scores : " + scoreLines.length);
+    scoreLines.forEach((score) => {
+      const scoreData = score.split(",");
+      scores.push({
+        student: scoreData[0],
+        assignment: scoreData[1],
+        difficultGrade: scoreData[2],
+        niceGrade: scoreData[3],
+      });
+    });
+  } catch (err) {
+    console.log(err);
+  }
+}
+*/
+
+let scores = [];
 
 class App extends Component {
   constructor() {
@@ -15,7 +39,25 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.setState({ scores, schermGeladen: true });
+    fetch("/scoresData/scoreSourceData.txt")
+      .then((response) => response.text())
+      .then((scoresData) => {
+        const scoreLines = scoresData.split("\n");
+        scoreLines.forEach((score) => {
+          const scoreData = score.split(",");
+          if (scoreData.length === 4) {
+            const student = scoreData[0].replaceAll('"', "");
+            const assignment = scoreData[1].replaceAll('"', "");
+            scores.push({
+              student,
+              assignment,
+              difficultGrade: parseInt(scoreData[2].trim()),
+              niceGrade: parseInt(scoreData[3].trim()),
+            });
+          }
+        });
+        this.setState({ scores, schermGeladen: true });
+      });
   }
 
   render() {
