@@ -24,6 +24,12 @@ class MakeLineChart extends React.Component {
     let dataKey = "cijfer1Leuk";
     let name_label;
     let lines = [];
+    console.log(
+      "aantal data line chart start: " + this.props.dataLineChart.length
+    );
+    this.props.dataLineChart.forEach((score) =>
+      console.log(score.assignment, " ", score.grade1Nice)
+    );
     if (this.state.scoreChoice === "Nice") {
       lines = this.props.students.map((element, index) => {
         switch (index) {

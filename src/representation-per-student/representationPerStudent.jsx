@@ -25,7 +25,8 @@ const filterScores = (scores) => {
   students = [];
   assignments = [];
   scores.forEach((score) => {
-    if (!students.includes(score.student)) students.push(score.student);
+    if (!students.includes(score.student.trim()))
+      students.push(score.student.trim());
     if (!assignments.includes(score.assignment))
       assignments.push(score.assignment);
   });
@@ -104,7 +105,7 @@ class RepresentationPerStudent extends React.Component {
             student={student}
             scoreChoice={this.state.scoreChoice}
             scoresGraph={this.props.scores.filter(
-              (element) => element.student === student
+              (element) => element.student.trim() === student.trim()
             )}
           />
         </Route>

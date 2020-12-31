@@ -1,3 +1,4 @@
+"Evelyn", "W1D3-4", 4, 4"
 "Evelyn", "SCRUM", 3, 4
 "Evelyn", "W1D1-1", 3, 3
 "Evelyn", "W1D2-1", 1, 3
@@ -7,7 +8,6 @@
 "Evelyn", "W1D2-5", 3, 4
 "Evelyn", "W1D3-1", 3, 4
 "Evelyn", "W1D3-2", 3, 4
-"Evelyn", "W1D3-4", 4, 4
 "Evelyn", "W1D3-5", 4, 4
 "Evelyn", "W1D3 - Project - Guess-the-number", 5, 5
 "Evelyn", "W1D4-1", 4, 5

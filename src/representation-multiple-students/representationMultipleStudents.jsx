@@ -24,7 +24,8 @@ const filterScores = (scores) => {
   students = [];
   assignments = [];
   scores.forEach((score) => {
-    if (!students.includes(score.student)) students.push(score.student);
+    if (!students.includes(score.student.trim()))
+      students.push(score.student.trim());
     if (!assignments.includes(score.assignment))
       assignments.push(score.assignment);
   });
@@ -39,9 +40,12 @@ const make_lineChart_data = (chosenStudents, assignments, scores) => {
   });
 
   scores.forEach((score) => {
-    let spotStudent = chosenStudents.indexOf(score.student);
+    let spotStudent = chosenStudents.findIndex(
+      (student) => student.trim() === score.student.trim()
+    );
     if (spotStudent > -1 && spotStudent < 6) {
       let spotAssignment = assignments.indexOf(score.assignment);
+      console.log("spotstudent : " + spotStudent);
       switch (spotStudent) {
         case 0:
           dataLineChart[spotAssignment]["grade1Difficult"] =
@@ -78,6 +82,7 @@ const make_lineChart_data = (chosenStudents, assignments, scores) => {
       }
     }
   });
+  console.log("aantal data : " + dataLineChart.length);
   return dataLineChart;
 };
 

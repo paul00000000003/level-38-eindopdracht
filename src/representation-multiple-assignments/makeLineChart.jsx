@@ -15,6 +15,10 @@ class MakeLineChart extends React.Component {
     let color = "#8400D3";
     let dataKey = "grade1Nice";
     let lines = [];
+    console.log("aantal data : " + this.props.dataLineChart.length);
+    this.props.dataLineChart.forEach((score) =>
+      console.log("student : " + score.student)
+    );
     if (this.props.scoreChoice === "Nice") {
       lines = this.props.assignments.map((element, index) => {
         switch (index) {

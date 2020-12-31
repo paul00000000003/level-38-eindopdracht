@@ -24,15 +24,18 @@ const make_lineChart_data = (assign, scores) => {
   chosenAssignments = assign;
   let dataLineChart = [];
   sortStudents(students);
-  students.forEach((element) => {
-    const item = { student: element };
-    dataLineChart.push(item);
+  dataLineChart = students.map((student) => {
+    return {
+      student,
+    };
   });
 
   scores.forEach((score) => {
     let spotAssign = chosenAssignments.indexOf(score.assignment);
     if (spotAssign > -1 && spotAssign < 6) {
-      let spotStudent = students.indexOf(score.student);
+      let spotStudent = students.findIndex(
+        (student) => student.trim() === score.student.trim()
+      );
       switch (spotAssign) {
         case 0:
           dataLineChart[spotStudent]["grade1Difficult"] = score.difficultGrade;
@@ -70,7 +73,8 @@ const makeListAssignments = (scores) => {
   scores.forEach((element) => {
     if (!assignments.includes(element.assignment))
       assignments.push(element.assignment);
-    if (!students.includes(element.student)) students.push(element.student);
+    if (!students.includes(element.student.trim()))
+      students.push(element.student.trim());
   });
   return [assignments, students];
 };
