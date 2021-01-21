@@ -178,13 +178,13 @@ class RepresentationMultipleStudents extends React.Component {
           <div>
             <img
               id="shiftPictureMultiple"
-              src="https://www.mupload.nl/img/0npaaxw.gif"
+              src="https://i.imgur.com/0heNvxQ.gif"
               alt="studenten"
               width="300px"
             />
             <img
               id="shiftPictureMultiple"
-              src="https://www.mupload.nl/img/0npaaxw.gif"
+              src="https://i.imgur.com/0heNvxQ.gif"
               alt="studenten"
               width="300px"
             />

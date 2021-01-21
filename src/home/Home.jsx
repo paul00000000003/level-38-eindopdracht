@@ -37,7 +37,6 @@ class home extends React.Component {
     let scoresAverage = [];
     let assignments = [];
     let positionAssignment;
-    console.log("binnen home : " + this.props.scores.length);
 
     this.props.scores.forEach((element) => {
       if (!assignments.includes(element.assignment))
@@ -53,14 +52,13 @@ class home extends React.Component {
       return 0;
     });
 
-    assignments.forEach((assignment) => {
-      const assignmentobj = {
+    gradesTotals = assignments.map((assignment) => {
+      return {
         assignment,
         number: 0,
         niceGradeTotal: 0,
         difficultGradeTotal: 0,
       };
-      gradesTotals.push(assignmentobj);
     });
 
     this.props.scores.forEach((element) => {
@@ -73,20 +71,19 @@ class home extends React.Component {
 
     let niceGradeAvg;
     let difficultGradeAvg;
-    gradesTotals.forEach((element) => {
-      if (element.niceGradeTotal !== 0 && element.number !== 0)
-        niceGradeAvg = element.niceGradeTotal / element.number;
+    scoresAverage = gradesTotals.map((total) => {
+      if (total.niceGradeTotal !== 0 && total.number !== 0)
+        niceGradeAvg = total.niceGradeTotal / total.number;
       else niceGradeAvg = 0;
-      if (element.difficultGradeTotal !== 0 && element.number !== 0)
-        difficultGradeAvg = element.difficultGradeTotal / element.number;
+      if (total.difficultGradeTotal !== 0 && total.number !== 0)
+        difficultGradeAvg = total.difficultGradeTotal / total.number;
       else difficultGradeAvg = 0;
-      scoresAverage.push({
-        assignment: element.assignment,
+      return {
+        assignment: total.assignment,
         niceGrade: niceGradeAvg,
         difficultGrade: difficultGradeAvg,
-      });
+      };
     });
-
     this.setState({ scoresAverage: scoresAverage, schermGeladen: true });
   }
 

@@ -251,13 +251,13 @@ class RepresentationMultipleAssignments extends React.Component {
             <div>
               <img
                 className="shift_multipleBooks"
-                src="https://www.mupload.nl/img/3gtpo26ut9aj.jpg"
+                src="https://i.imgur.com/dI6SweJ.gif"
                 alt="boek"
                 width="300px"
               />
               <img
                 className="shift_multipleBooks2"
-                src="https://www.mupload.nl/img/3gtpo26ut9aj.jpg"
+                src="https://i.imgur.com/dI6SweJ.gif"
                 alt="boek"
                 width="300px"
               />

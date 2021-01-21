@@ -99,7 +99,7 @@ function RepresentationPerAssignment(props) {
         <div>
           <img
             className="shiftBook_single"
-            src="https://www.mupload.nl/img/3gtpo26ut9aj.jpg"
+            src="https://i.imgur.com/dI6SweJ.gif"
             alt="boek"
             width="400px"
           />

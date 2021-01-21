@@ -160,7 +160,7 @@ class RepresentationPerStudent extends React.Component {
             <div>
               <img
                 className="shiftImage_singleStudent"
-                src="https://www.mupload.nl/img/0npaaxw.gif"
+                src="https://i.imgur.com/0heNvxQ.gif"
                 alt="student"
                 width="300px"
               />
